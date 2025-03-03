@@ -1,0 +1,95 @@
+Heart2Heart_Courses/
+├── client/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── context/
+│   │   │   │   ├── AuthContext.jsx       # Authentication context
+│   │   │   │   ├── ThemeContext.jsx      # Theme context
+│   │   │   │   ├── PlatformContext.jsx   # Social platform context (if needed)
+│   │   │   │   └── ...
+│   │   │   ├── layout/
+│   │   │   │   ├── Header.jsx
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   │   ├── Footer.jsx           # If you have a footer
+│   │   │   │   └── Layout.jsx           # Main layout component
+│   │   │   ├── routes/
+│   │   │   │   └── AppRoutes.jsx        # React Router configuration
+│   │   │   ├── pages/
+│   │   │   │   ├── Dashboard.jsx
+│   │   │   │   ├── Analytics.jsx
+│   │   │   │   ├── Scheduling.jsx
+│   │   │   │   ├── Settings.jsx
+│   │   │   │   ├── Login.jsx
+│   │   │   │   └── ...
+│   │   │   ├── components/                # Reusable UI components
+│   │   │   │   ├── common/
+│   │   │   │   │   ├── Button.jsx
+│   │   │   │   │   ├── Input.jsx
+│   │   │   │   │   ├── Modal.jsx
+│   │   │   │   │   ├── ...
+│   │   │   │   ├── platform/            # Platform-specific components (if needed)
+│   │   │   │   │   └── FacebookPost.jsx
+│   │   │   │   └── ...
+│   │   │   ├── utils/
+│   │   │   │   ├── api.js             # API interaction functions
+│   │   │   │   ├── formatting.js      # Date/number formatting
+│   │   │   │   ├── validation.js      # Form validation
+│   │   │   │   └── ...
+│   │   │   ├── services/
+│   │   │   │   ├── authService.js
+│   │   │   │   ├── postService.js
+│   │   │   │   └── ...
+│   │   │   ├── styles/
+│   │   │   │   ├── global.css
+│   │   │   │   └── theme.js        # Or theme.scss, etc.
+│   │   │   ├── main.jsx
+│   │   │   └── App.jsx
+│   │   ├── assets/
+│   │   │   └── images/
+│   │   │       └── logo.png
+│   │   ├── .env
+│   │   ├── package.json
+│   │   ├── vite.config.js
+│   │   └── ...
+│   └── ...
+
+server/
+├── src/
+│   ├── routes/
+│   │   ├── users.routes.js
+│   │   ├── courses.routes.js
+│   │   ├── enrollments.routes.js
+│   │   ├── payments.routes.js
+│   │   └── profiles.routes.js
+│   ├── controllers/
+│   │   ├── users.controller.js
+│   │   ├── courses.controller.js
+│   │   ├── enrollments.controller.js
+│   │   ├── payments.controller.js
+│   │   └── profiles.controller.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Course.js
+│   │   ├── Enrollment.js
+│   │   ├── Payment.js
+│   │   └── Profile.js
+│   ├── services/
+│   │   ├── users.service.js
+│   │   ├── courses.service.js
+│   │   ├── enrollments.service.js
+│   │   ├── payments.service.js
+│   │   └── profiles.service.js
+│   ├── config/
+│   │   ├── db.config.js
+│   │   └── auth.config.js
+│   ├── middleware/
+│   │   └── auth.middleware.js
+│   ├── utils/
+│   │   └── payment.js # Payment gateway integration
+│   ├── app.js
+│   └── main.js
+├── .env
+├── package.json
+└── ...
