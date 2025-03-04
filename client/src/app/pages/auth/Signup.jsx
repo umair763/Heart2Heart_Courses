@@ -1,31 +1,33 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import bg from '../../../assets/images/H2H logo bbrown heart only.png';
+import logo from '/src/assets/images/H2Hlogobrown.png'; // Ensure the path is correct
+import { auth } from "../../../firebase/firebaseConfig";
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
+const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+await updateProfile(userCredential.user, { displayName: username });
 const SignUp = () => {
    const [username, setUsername] = useState('');
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [profileImage, setProfileImage] = useState(null);
    const navigate = useNavigate();
-
-   const handleImageUpload = (event) => {
-      const file = event.target.files[0];
-      if (file) {
-         const reader = new FileReader();
-         reader.onloadend = () => {
-            setProfileImage(reader.result);
-         };
-         reader.readAsDataURL(file);
-      }
-   };
-
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
-      if (username && email && password) {
-         const user = { username, email, password, profileImage };
-         localStorage.setItem('user', JSON.stringify(user)); // Store user data
-         navigate('/signin'); // Redirect to signin after signup
+      setError('');
+
+      if (password !== confirmPassword) {
+         setError('Passwords do not match');
+         return;
+      }
+
+      try {
+         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+         await updateProfile(userCredential.user, { displayName: username });
+         console.log('User Created:', userCredential.user);
+         navigate('/signin'); // Redirect to Sign In
+      } catch (error) {
+         setError(error.message);
       }
    };
 
@@ -84,7 +86,9 @@ const SignUp = () => {
                />
                <button
                   type="submit"
-                  className="w-1/2 bg-[#92553D] cursor-pointer hover:bg-[#785040] text-white font-bold py-3 rounded-full text-sm md:text-base"
+
+
+                  className="w-full bg-blue-600 cursor-pointer hover:bg-brown-700 text-white font-semibold py-3 rounded-full text-sm"
                >
                   SIGN UP
                </button>
