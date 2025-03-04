@@ -1,8 +1,8 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
-import logo from "/src/assets/images/H2Hlogobrown.png"; 
-import { auth } from '../../../firebase/firebaseConfig';
+import logo from "/src/assets/images/H2Hlogobrown.png";
+import { auth } from "../../../firebase/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 function Signin() {

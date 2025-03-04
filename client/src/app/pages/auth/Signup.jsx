@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '/src/assets/images/H2Hlogobrown.png'; // Ensure the path is correct
-import { auth } from '../../../firebase/firebaseConfig';
+import { auth } from "../../../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
