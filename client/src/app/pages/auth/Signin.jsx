@@ -25,7 +25,7 @@ function Signin() {
          const user = userCredential.user;
          setUser({ email: user.email, uid: user.uid });
          setIsAuthenticated(true);
-         navigate('/');
+         navigate('/courses');
       } catch (error) {
          setError('Invalid email or password. Please try again.');
       }
