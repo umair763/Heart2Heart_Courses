@@ -29,7 +29,7 @@ function MainPG() {
             <CourseCard
                imageUrl={courseImage}
                title="Bringing Desires Back"
-               buttonLink="https://github.com"
+               buttonLink="https://www.estherperel.com/courses/turning-conflict-into-connection"
                p="Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck."
                li1="PERFECT FOR DATE NIGHT"
                li2="GUIDED EXERCISES TO TURN INSIGHTS INTO ACTION"
@@ -38,7 +38,7 @@ function MainPG() {
             <CourseCard
                imageUrl={courseImage}
                title="Turning Conflicts Into Connection"
-               buttonLink="https://github.com"
+               buttonLink="https://www.estherperel.com/courses/turning-conflict-into-connection"
                p="Uncover why you keep having the same fights over and over again. Learn how to break free from habitual patterns and responses. 
                Find peace and reconciliation even when you disagree."
                li1="Gain new insights in just one hour."
@@ -48,7 +48,7 @@ function MainPG() {
             <CourseCard
                imageUrl={courseImage}
                title="Playing with Desires"
-               buttonLink="https://github.com"
+               buttonLink="https://www.estherperel.com/courses/turning-conflict-into-connection"
                p="Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck. Discover a new sense of hope and possibility."
                li1="PERFECT FOR DATE NIGHT"
                li2="Guided exercises to turn insights into action and understanding"
