@@ -1,15 +1,14 @@
 // App.jsx
 import React from 'react';
 import AppRoutes from './app/routes/AppRoutes';
-import AuthProvider from './app/context/AuthContext'; // Import the AuthProvider
-import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
+import { AuthProvider } from './app/context/AuthContext'; // Ensure you're importing the correct AuthProvider
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
    return (
       <BrowserRouter>
-         {/* Wrap your application with BrowserRouter */}
          <AuthProvider>
-            {/* Wrap with AuthProvider */}
+            {/* Wrap with AuthProvider here */}
             <div className="font-roboto">
                <AppRoutes />
             </div>
