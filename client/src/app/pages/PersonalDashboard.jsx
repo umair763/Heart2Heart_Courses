@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import React from 'react';
 
 function PersonalDashboard() {
    return (
-      <>
-         <h1>Personal Dashboard</h1>
-      </>
+      <div className="p-6 bg-white rounded shadow">
+         <h2 className="text-2xl font-bold">Dashboard</h2>
+         <p>Manage your personal courses and settings here.</p>
+      </div>
    );
 }
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React, { useState, useMemo, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
 import AppRoutes from './app/routes/AppRoutes';
 import AuthContext from './app/context/AuthContext';
 
@@ -15,10 +15,17 @@ function App() {
       }
    }, []);
 
+   const authContextValue = useMemo(
+      () => ({ isAuthenticated, setIsAuthenticated, user, setUser }),
+      [isAuthenticated, user]
+   );
+
    return (
-      <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated, user, setUser }}>
+      <AuthContext.Provider value={authContextValue}>
          <BrowserRouter>
-            <AppRoutes />
+            <div className="font-roboto">
+               <AppRoutes />
+            </div>
          </BrowserRouter>
       </AuthContext.Provider>
    );

@@ -7,22 +7,28 @@ import AuthContext from '../context/AuthContext';
 import PersonalDashboard from '../pages/PersonalDashboard';
 import MainPG from '../pages/MainPG';
 import CoursePage from '../pages/CoursePage';
+import ProtectedRoutes from '../../ProtectedRoutes';
 
 function AppRoutes() {
    const { isAuthenticated } = useContext(AuthContext);
 
    return (
       <Routes>
-         <Route path="/" element={<Layout />}>
-            <Route index element={<MainPG />} />
-            <Route path="signup" element={<Signup />} />
-            <Route path="signin" element={<Signin />} />
-            <Route path="courses" element={<CoursePage />} />
-            <Route
-               path="dashboard"
-               element={isAuthenticated ? <PersonalDashboard /> : <Navigate to="/signin" replace />}
-            />
+         {/* Public Routes */}
+         <Route path="/signup" element={<Signup />} />
+         <Route path="/signin" element={<Signin />} />
+
+         {/* Protected Routes */}
+         <Route element={<ProtectedRoutes />}>
+            <Route path="/" element={<Layout />}>
+               <Route index element={<MainPG />} /> 
+               <Route path="dashboard" element={<PersonalDashboard />} />
+               <Route path="courses" element={<CoursePage />} />
+            </Route>
          </Route>
+
+         {/* Redirect for unknown routes */}
+         <Route path="*" element={<Navigate to={isAuthenticated ? '/' : '/signin'} replace />} />
       </Routes>
    );
 }
