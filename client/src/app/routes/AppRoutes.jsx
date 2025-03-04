@@ -18,6 +18,7 @@ function AppRoutes() {
          {/* Main Layout Wrapper */}
          <Route path="/" element={<Layout />}>
             <Route index element={<MainPG />} /> {/* Default route */}
+            <Route path="/course/:courseId" element={<CoursePage />} />
             <Route path="courses" element={<CoursePage />} />
             {/* Protected Routes */}
             <Route element={<ProtectedRoutes />}>
