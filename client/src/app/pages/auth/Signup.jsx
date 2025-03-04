@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import logo from '/src/assets/images/H2Hlogobrown.png';
 import { auth } from '../../../firebase/firebaseConfig';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import signupImage from '/src/assets/images/ALIHAIDERTHINK.jpeg'; // Adjust the path accordingly
+import signupImage from '/src/assets/images/ALIHAIDERTHINK.jpeg';
+import moneyBackBg from '/src/assets/images/background.png'; // Background image for money-back box
 
 const SignUp = () => {
    const [username, setUsername] = useState('');
@@ -13,7 +14,6 @@ const SignUp = () => {
    const [step, setStep] = useState(1);
    const [participation, setParticipation] = useState('');
    const [paymentMethod, setPaymentMethod] = useState('');
-
    const [error, setError] = useState('');
    const [loading, setLoading] = useState(false);
 
@@ -80,39 +80,11 @@ const SignUp = () => {
 
             {step === 1 && (
                <form className="w-full mt-4 space-y-3 flex flex-col items-center">
-                  <input
-                     type="text"
-                     placeholder="Full Name"
-                     className="w-full p-3 border rounded-lg focus:outline-[#92553D]"
-                     value={username}
-                     onChange={(e) => setUsername(e.target.value)}
-                  />
-                  <input
-                     type="email"
-                     placeholder="Email Address"
-                     className="w-full p-3 border rounded-lg focus:outline-[#92553D]"
-                     value={email}
-                     onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <input
-                     type="password"
-                     placeholder="Password"
-                     className="w-full p-3 border rounded-lg focus:outline-[#92553D]"
-                     value={password}
-                     onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <input
-                     type="password"
-                     placeholder="Confirm Password"
-                     className="w-full p-3 border rounded-lg focus:outline-[#92553D]"
-                     value={confirmPassword}
-                     onChange={(e) => setConfirmPassword(e.target.value)}
-                  />
-                  <button
-                     type="button"
-                     className="w-full bg-blue-600 hover:bg-[#6b4226] text-white font-semibold py-3 rounded-full"
-                     onClick={handleNext}
-                  >
+                  <input type="text" placeholder="Full Name" className="w-full p-3 border rounded-lg focus:outline-[#92553D]" value={username} onChange={(e) => setUsername(e.target.value)} />
+                  <input type="email" placeholder="Email Address" className="w-full p-3 border rounded-lg focus:outline-[#92553D]" value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <input type="password" placeholder="Password" className="w-full p-3 border rounded-lg focus:outline-[#92553D]" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <input type="password" placeholder="Confirm Password" className="w-full p-3 border rounded-lg focus:outline-[#92553D]" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                  <button type="button" className="w-full bg-blue-600 hover:bg-[#6b4226] text-white font-semibold py-3 rounded-full" onClick={handleNext}>
                      Next
                   </button>
                </form>
@@ -120,23 +92,13 @@ const SignUp = () => {
 
             {step === 2 && (
                <form className="w-full mt-4 space-y-3 flex flex-col items-center">
-                  <h3 className="text-lg font-semibold text-[#92553D] text-center">
-                     Will you be taking this course solo or with a partner?
-                  </h3>
-                  <select
-                     className="w-full p-3 border rounded-lg focus:outline-[#92553D]"
-                     value={participation}
-                     onChange={(e) => setParticipation(e.target.value)}
-                  >
+                  <h3 className="text-lg font-semibold text-[#92553D] text-center">Will you be taking this course solo or with a partner?</h3>
+                  <select className="w-full p-3 border rounded-lg focus:outline-[#92553D]" value={participation} onChange={(e) => setParticipation(e.target.value)}>
                      <option value="" disabled>Select an option</option>
                      <option value="solo">Solo</option>
                      <option value="partnered">Partnered</option>
                   </select>
-                  <button
-                     type="button"
-                     className="w-full bg-blue-600 hover:bg-[#6b4226] text-white font-semibold py-3 rounded-full"
-                     onClick={handleNext}
-                  >
+                  <button type="button" className="w-full bg-blue-600 hover:bg-[#6b4226] text-white font-semibold py-3 rounded-full" onClick={handleNext}>
                      Next
                   </button>
                </form>
@@ -144,25 +106,14 @@ const SignUp = () => {
 
             {step === 3 && (
                <form className="w-full mt-4 space-y-3 flex flex-col items-center">
-                  <h3 className="text-lg font-semibold text-[#92553D] text-center">
-                     Select Payment Method (Coming Soon)
-                  </h3>
-                  <select
-                     className="w-full p-3 border rounded-lg focus:outline-[#92553D]"
-                     value={paymentMethod}
-                     onChange={(e) => setPaymentMethod(e.target.value)}
-                  >
+                  <h3 className="text-lg font-semibold text-[#92553D] text-center">Select Payment Method (Coming Soon)</h3>
+                  <select className="w-full p-3 border rounded-lg focus:outline-[#92553D]" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
                      <option value="" disabled>Select a payment method</option>
                      <option value="credit_card">Credit Card</option>
                      <option value="paypal">PayPal</option>
                      <option value="bank_transfer">Bank Transfer</option>
                   </select>
-                  <button
-                     type="submit"
-                     disabled={loading}
-                     className="w-full bg-blue-600 hover:bg-[#6b4226] text-white font-semibold py-3 rounded-full"
-                     onClick={handleSignUp}
-                  >
+                  <button type="submit" disabled={loading} className="w-full bg-blue-600 hover:bg-[#6b4226] text-white font-semibold py-3 rounded-full" onClick={handleSignUp}>
                      {loading ? "Signing Up..." : "SIGN UP"}
                   </button>
                </form>
@@ -173,12 +124,11 @@ const SignUp = () => {
             </button>
          </div>
 
-         {/* Money-Back Box - Aligned Correctly */}
-         <div className="mt-6 w-full max-w-md text-center bg-[#fef2e6] p-6 rounded-lg shadow-md border-l-4 border-[#92553D]">
-            <h3 className="text-xl font-semibold text-[#92553D] leading-tight">
-               If this doesn't improve your relationship, get your money back.
-            </h3>
-            <p className="text-gray-600 mt-3 text-sm leading-relaxed">
+         {/* Money-Back Box - Now With Background Image & Hover Effect */}
+         <div className="relative w-full max-w-md mt-6 p-6 rounded-lg shadow-md border-l-4 border-[#92553D] bg-[#fef2e6] transition-transform duration-300 hover:scale-105">
+            <img src={moneyBackBg} alt="Money Back Guarantee" className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20" />
+            <h3 className="text-xl font-semibold text-[#92553D] leading-tight text-center mt-10">If this doesn't improve your relationship, get your money back.</h3>
+            <p className="text-gray-600 mt-3 text-sm leading-relaxed text-center">
                This course was created with usefulness in mind. If you watch the videos, do the exercises, and find that you haven’t gained any useful insights that improve your relationship, we offer a 30-day money-back guarantee.
             </p>
          </div>

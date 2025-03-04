@@ -1,0 +1,23 @@
+{
+  "name": "heart2heart_courses",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umair763/Heart2Heart_Courses.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umair763/Heart2Heart_Courses/issues"
+  },
+  "homepage": "https://github.com/umair763/Heart2Heart_Courses#readme",
+  "description": "",
+  "dependencies": {
+    "firebase": "^11.4.0"
+  }
+}
