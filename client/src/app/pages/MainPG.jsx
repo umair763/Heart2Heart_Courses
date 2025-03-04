@@ -21,7 +21,7 @@ function MainPG() {
             <div className="w-full md:w-1/2 h-full flex justify-end items-center absolute -right-5 -mt-44">
                <div className="w-96 h-96 md:w-[450px] md:h-[450px] rounded-full overflow-hidden">
                   <img
-                     src=".\src\assets\images\Ali Haider standing2.jpg"
+                     src="./src/assets/images/Ali Haider standing2.jpg"
                      alt="Ali Haider"
                      className="w-full h-full object-cover"
                   />

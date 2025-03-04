@@ -1,21 +1,20 @@
-// AppRoutes.jsx
 import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import Signup from '../pages/Auth/Signup';
+import Signin from '../pages/Auth/Signin';
 import Layout from '../layout/Layout';
-import Signup from '../pages/auth/Signup';
-import Signin from '../pages/auth/Signin';
-import MainPG from '../pages/MainPG';
+import AuthContext from '../context/AuthContext';
 import PersonalDashboard from '../pages/PersonalDashboard';
-import CoursePage from '../pages/CoursePage';
-import { AuthContext } from '../context/AuthContext';
-import ProtectedRoute from '../../ProtectedRoutes';
+import MainPG from '../pages/MainPG';
+import CoursePage from '../pages/CoursePage'; // <-- New dedicated component
 
 function AppRoutes() {
    const { isAuthenticated } = useContext(AuthContext);
 
    return (
       <Routes>
-         {/* Public Routes */}
+         <Route path="/signup" element={<Signup />} />
+         <Route path="/signin" element={<Signin />} />
          <Route
             path="/"
             element={
@@ -24,7 +23,6 @@ function AppRoutes() {
                </Layout>
             }
          />
-         {/* Homepage wrapped in Layout */}
          <Route
             path="/course"
             element={
@@ -33,24 +31,19 @@ function AppRoutes() {
                </Layout>
             }
          />
-         {/* Course page wrapped in Layout */}
-         <Route path="/Signup" element={<Signup />} />
-         <Route path="/Signin" element={<Signin />} />
-         {/* Protected Routes */}
-         <Route element={<ProtectedRoute />}>
-            {/* Only renders protected routes if authenticated */}
-            <Route
-               path="/dashboard"
-               element={
+         <Route
+            path="/dashboard"
+            element={
+               isAuthenticated ? (
                   <Layout>
                      <PersonalDashboard />
                   </Layout>
-               }
-            />
-            {/* User's personal dashboard wrapped in Layout */}
-         </Route>
-         {/* Catch-all route (if route doesn't exist) */}
-         <Route path="*" element={<Navigate to={isAuthenticated ? '/dashboard' : '/Signin'} replace />} />
+               ) : (
+                  <Navigate to="/signin" replace />
+               )
+            }
+         />
+         <Route path="*" element={<Navigate to={isAuthenticated ? '/' : '/signin'} replace />} />
       </Routes>
    );
 }

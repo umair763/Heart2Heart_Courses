@@ -1,16 +1,11 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../context/AuthContext';
+import { useState } from 'react';
 
-const PersonalDashboard = () => {
-   const { user } = useContext(AuthContext);
-
+function PersonalDashboard() {
    return (
-      <div>
-         <h1>Welcome, {user?.username}</h1>
-         <h2>Your Enrolled Courses</h2>
-         <ul>{user?.courses && user?.courses.map((course, index) => <li key={index}>{course}</li>)}</ul>
-      </div>
+      <>
+         <h1>Personal Dashboard</h1>
+      </>
    );
-};
+}
 
 export default PersonalDashboard;
