@@ -39,7 +39,7 @@ function Signin() {
             backgroundRepeat: 'no-repeat', // Prevents repeating of the image
          }}
       >
-         <div className="bg-[#ffffffe2] p-8 rounded-lg shadow-md w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl flex flex-col items-center">
+         <div className="bg-white bg-opacity-50 backdrop-blur-md p-8 rounded-lg shadow-md w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl flex flex-col items-center">
             <h2 className="text-3xl font-bold text-[#92553D] text-center">Sign in</h2>
             <p className="text-gray-500 mt-2 text-center">Welcome to Heart2Heart Dashboard</p>
             <form className="w-full mt-6 space-y-4 flex flex-col items-center" onSubmit={handleSubmit}>

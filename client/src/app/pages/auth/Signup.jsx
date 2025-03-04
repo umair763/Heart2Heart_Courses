@@ -43,6 +43,19 @@ const SignUp = () => {
             <h2 className="text-3xl font-bold text-[#92553D] text-center">Create Account</h2>
             <p className="text-gray-500 mt-2 text-center">Sign up at Heart2Heart Dashboard</p>
 
+            <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex justify-center items-center border-4 border-[#92553D] rounded-full overflow-hidden mt-4">
+               {profileImage ? (
+                  <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+               ) : (
+                  <span className="w-6 lg:w-13 md:w-8 sm:w-7">
+                     <img src="./src/assets/images/person-icon-1682.png" />
+                  </span>
+               )}
+               <label className="absolute w-9 bottom-1 right-2 bg-[#92553D] text-white  md:p-1 rounded-full cursor-pointer shadow-lg z-50 text-sm md:text-base">
+                  <img src="./src/assets/images/camera.png" />
+                  <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
+               </label>
+            </div>
 
             <form
                className="w-full max-w-xs md:max-w-sm lg:max-w-md mt-4 md:mt-6 space-y-3 md:space-y-4 flex flex-col items-center"
