@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+   const navigate = useNavigate();
+
    return (
       <>
          <header className="text-[#00203FFF]  bg-gray-50 p-4 flex items-center justify-between gap-4 md:gap-8 -mb-4">
@@ -11,24 +13,24 @@ function Header() {
             {/* Middle Column - Navigation Links */}
             <nav className="flex-1 flex justify-center overflow-x-auto scrollbar-hide">
                <div className="flex gap-3 md:gap-6 lg:gap-8 mx-4">
-                  <Link
-                     to="/"
+                  <span
+                     onClick={() => navigate('/')}
                      className="text-sm md:text-base whitespace-nowrap hover:text-[#325272] hover:cursor-pointer"
                   >
                      Home
-                  </Link>
-                  <Link
-                     to="/course"
+                  </span>
+                  <span
+                     onClick={() => navigate('/course')}
                      className="text-sm md:text-base whitespace-nowrap hover:text-[#325272] hover:cursor-pointer"
                   >
                      Courses Page
-                  </Link>
-                  <Link
-                     to="/dashboard"
+                  </span>
+                  <span
+                     onClick={() => navigate('/dashboard')}
                      className="text-sm md:text-base whitespace-nowrap hover:text-[#325272] hover:cursor-pointer"
                   >
                      Dashboard
-                  </Link>
+                  </span>
                </div>
             </nav>
          </header>

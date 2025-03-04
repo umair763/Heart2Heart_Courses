@@ -31,7 +31,7 @@ function MainPG() {
          <h1 className="text-3xl md:text-4xl font-bold mb-4 -mt-32 text-[#00203FFF]">Explore all courses</h1>
          <div className="">
             <CourseCard
-               imageUrl=".\src\assets\images\chamcham2person.avif"
+               imageUrl="./src/assets/images/chamcham2person.avif"
                title="Bringing Desires Back"
                buttonLink="https:github.com"
                p="Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck. Discover a new sense of
@@ -42,7 +42,7 @@ function MainPG() {
                   FOR 40+ YEARS"
             />
             <CourseCard
-               imageUrl=".\src\assets\images\chamcham2person.avif"
+               imageUrl="./src/assets/images/chamcham2person.avif"
                title="Bringing Desires Back"
                buttonLink="https:github.com"
                p="Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck. Discover a new sense of
@@ -53,7 +53,7 @@ function MainPG() {
                   FOR 40+ YEARS"
             />
             <CourseCard
-               imageUrl=".\src\assets\images\chamcham2person.avif"
+               imageUrl="./src/assets/images/chamcham2person.avif"
                title="Bringing Desires Back"
                buttonLink="https:github.com"
                p="Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck. Discover a new sense of
@@ -64,7 +64,7 @@ function MainPG() {
                   FOR 40+ YEARS"
             />
             <CourseCard
-               imageUrl=".\src\assets\images\chamcham2person.avif"
+               imageUrl="./src/assets/images/chamcham2person.avif"
                title="Bringing Desires Back"
                buttonLink="https:github.com"
                p="Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck. Discover a new sense of
@@ -75,7 +75,7 @@ function MainPG() {
                   FOR 40+ YEARS"
             />
             <CourseCard
-               imageUrl=".\src\assets\images\chamcham2person.avif"
+               imageUrl="./src/assets/images/chamcham2person.avif"
                title="Bringing Desires Back"
                buttonLink="https:github.com"
                p="Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck. Discover a new sense of

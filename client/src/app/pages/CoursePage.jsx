@@ -1,16 +1,14 @@
-// CoursePage.js
-import React, { useContext } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const CoursePage = ({ courseId }) => {
-
+const CoursePage = () => {
+   const navigate = useNavigate();
 
    return (
       <div>
          <h2>Course Title</h2>
          <p>Course Description</p>
-         {/* Display course details */}
-         <button onClick={handleEnroll}>Enroll</button>
+         <button onClick={() => navigate('/')}>Go Home</button> {/* Test navigation */}
       </div>
    );
 };

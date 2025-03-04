@@ -4,7 +4,7 @@ import SlidingBar from './SlidingBar'; // Assuming SlidingBar is in the same dir
 const SlidingBarContainer = () => {
    return (
       <div className="overflow-hidden w-full">
-         <style jsx>{`
+         <style>{`
             /* CSS animation for smooth sliding from right to left */
             @keyframes slide {
                0% {
