@@ -1,7 +1,9 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
-import bg from '../../../assets/images/H2H logo bbrown heart only.png';
+import logo from "/src/assets/images/H2Hlogobrown.png"; 
+import { auth } from '../../../firebase/firebaseConfig';
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 function Signin() {
    const [email, setEmail] = useState('');
@@ -9,25 +11,21 @@ function Signin() {
    const navigate = useNavigate();
    const { setIsAuthenticated, setUser } = useContext(AuthContext);
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
-
-      const storedUser = localStorage.getItem('user');
-
-      if (storedUser) {
-         const user = JSON.parse(storedUser);
-
-         if (user.email === email && user.password === password) {
-            setUser(user); // Set user data in context
-            setIsAuthenticated(true);
-            navigate('/');
-         } else {
-            alert('Invalid credentials');
-         }
-      } else {
-         alert('User not found. Please sign up.');
+   
+      try {
+         const userCredential = await signInWithEmailAndPassword(auth, email, password);
+         const user = userCredential.user;
+   
+         setUser({ email: user.email, uid: user.uid }); // Store user info in context
+         setIsAuthenticated(true);
+         navigate('/'); // Redirect to home page
+      } catch (error) {
+         alert(error.message); // Display Firebase authentication error
       }
    };
+   
 
    return (
       <div
@@ -59,7 +57,7 @@ function Signin() {
                />
                <button
                   type="submit"
-                  className="w-full sm:w-3/4 md:w-2/3 bg-[#92553D] cursor-pointer hover:bg-[#785040] text-white font-bold py-3 rounded-full"
+                  className="w-full bg-blue-600 cursor-pointer hover:bg-brown-700 text-white font-bold py-3 rounded-lg"
                >
                   SIGN IN
                </button>

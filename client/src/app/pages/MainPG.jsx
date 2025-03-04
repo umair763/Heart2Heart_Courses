@@ -9,11 +9,9 @@ function MainPG() {
          <div className="flex items-center justify-between p-4 min-h-screen relative">
             {/* Left Column - Text */}
             <div className="w-full md:w-1/2 text-left flex flex-col justify-center">
-               <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#00203FFF]">Learn from Sayed Ali Haider</h1>
+               <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#00203FFF]">Learn from Syed Ali Haider</h1>
                <p className="text-lg md:text-xl">
-                  Sayed Ali Haider has helped millions improve their lives and relationships. Now, she’s offering a new
-                  way for you to gain access to her thoughtful and unique perspective. Her self-paced courses will spark
-                  new insights and help you improve your relational intelligence.
+               As your relationship counsellor, I’m here to guide you through challenges like infidelity and marital struggles. Together, we’ll work on healing, rebuilding trust, and creating a stronger foundation. Let’s take the steps toward a healthier, happier relationship.
                </p>
             </div>
 
