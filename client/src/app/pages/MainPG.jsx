@@ -59,8 +59,6 @@ function MainPG() {
          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center text-[#00203FFF]">Explore all courses</h1>
 
          <div className="flex flex-wrap gap-6 justify-center">
-<<<<<<< HEAD
-            <CourseCard
                imageUrl={courseImage}
                title="Bringing Desires Back"
                buttonLink="https://www.estherperel.com/courses/turning-conflict-into-connection"
@@ -68,7 +66,7 @@ function MainPG() {
                li1="PERFECT FOR DATE NIGHT"
                li2="GUIDED EXERCISES TO TURN INSIGHTS INTO ACTION"
                li3="BASED ON 40+ YEARS OF EXPERIENCE"
-            />
+            /
             <CourseCard
                imageUrl={courseImage}
                title="Turning Conflicts Into Connection"
@@ -88,7 +86,7 @@ function MainPG() {
                li2="Guided exercises to turn insights into action and understanding"
                li3="Based on the same processes Esther has used to help real couples for 40+ years"
             />
-=======
+
             {courses.map((course) => (
                <CourseCard
                   key={course.id}
@@ -102,7 +100,6 @@ function MainPG() {
                   li3={course.li3}
                />
             ))}
->>>>>>> 9f7049cd35c0cd1c2099a23e1dcc5d1c4dc9a52a
          </div>
 
          <h1 className="text-3xl md:text-4xl font-bold text-center mx-auto mt-28 text-[#00203FFF]">
