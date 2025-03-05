@@ -1,18 +1,26 @@
-import { db } from "../firebase/firebaseConfig";; // Use alias // Ensure correct import path
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
 
-export const getUserPurchasedCourses = async (userId) => {
+export const getAllCourses = async () => {
     try {
-        const userDocRef = doc(db, "users", userId);
-        const userDocSnap = await getDoc(userDocRef);
+        console.log("Fetching all courses...");
+        const coursesCollectionRef = collection(db, "courses");
+        const q = query(coursesCollectionRef, orderBy("title")); // Order by title (or any field)
+        const querySnapshot = await getDocs(q);
 
-        if (userDocSnap.exists()) {
-            return userDocSnap.data().purchasedCourses || [];
+        if (!querySnapshot.empty) {
+            const courses = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            console.log("Fetched courses:", courses);
+            return courses;
         } else {
+            console.log("No courses found.");
             return [];
         }
     } catch (error) {
-        console.error("Error fetching purchased courses:", error);
+        console.error("Error fetching courses:", error);
         return [];
     }
 };
