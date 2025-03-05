@@ -58,10 +58,10 @@ function CoursePage() {
 
             {/* CTA Buttons */}
             <div className="mt-8 flex flex-col space-y-3 items-center w-full">
-               <button className="bg-[#8a552d] lg:w-full text-white font-bold py-3 px-6 rounded-full hover:bg-[#866043] w-full ">
+               <button className="bg-[#8a552d] lg:w-full text-white font-bold py-3 px-6 rounded-full hover:cursor-pointer hover:bg-[#866043] w-full ">
                   Enroll Now for ${course.price}
                </button>
-               <button className="border border-black lg:w-full text-black font-bold py-2 px-6 rounded-full hover:bg-gray-200 w-full mt-3 mb-3 ">
+               <button className="border border-black lg:w-full text-black font-bold py-2 px-6 rounded-full hover:cursor-pointer hover:bg-gray-200 w-full mt-3 mb-3 ">
                   Watch Course Trailer
                </button>
             </div>

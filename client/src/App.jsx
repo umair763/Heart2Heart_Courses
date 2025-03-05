@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
 import AppRoutes from './app/routes/AppRoutes';
 import AuthContext from './app/context/AuthContext';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
    const [isAuthenticated, setIsAuthenticated] = useState(false);

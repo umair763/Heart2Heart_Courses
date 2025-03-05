@@ -8,27 +8,27 @@ function Header() {
    return (
       <>
          <header
-            className={`text-[#00203FFF] ${
-               isCoursePage ? 'bg-[#d2874d]' : 'bg-gray-50'
+            className={`text-[#8a552d] ${
+               isCoursePage ? 'bg-[#d2874d]' : ''
             } p-4 flex items-center justify-between gap-4 md:gap-8 -mb-4`}
          >
-            <h1 className="text-xl xs:text-md md:text-3xl lg:text-4xl font-bold text-[#2E1A47] whitespace-nowrap ml-3">
+            <h1 className="text-xl xs:text-md md:text-3xl lg:text-4xl font-bold text-[#8a552d]  whitespace-nowrap ml-6">
                Heart2Heart | Courses
             </h1>
             <nav className="flex-1 flex justify-center">
                <div className="flex gap-3 md:gap-6 hover:cursor-pointer text-sm md:text-lg">
                   <Link
                      to="/"
-                     className={` hover:text-[#325272] ${
-                        isCoursePage ? 'hover:bg-[#c97b3f] ' : 'bg-gray-50'
+                     className={` hover:text-[#755136] ${
+                        isCoursePage ? 'hover:bg-[#c97b3f] ' : ''
                      } p-2 rounded-3xl `}
                   >
                      Home
                   </Link>
                   <Link
                      to="/dashboard"
-                     className={` hover:text-[#325272] ${
-                        isCoursePage ? 'hover:bg-[#c97b3f] ' : 'bg-gray-50'
+                     className={` hover:text-[#755136] ${
+                        isCoursePage ? 'hover:bg-[#c97b3f] ' : ''
                      } p-2 rounded-3xl `}
                   >
                      Dashboard
@@ -36,7 +36,7 @@ function Header() {
                </div>
             </nav>
          </header>
-         <div className="w-7xl line-height bg-[#00203FFF] mt-2 ml-7 "></div>
+         <div className="w-7xl line-height bg-[#8a552d]  mt-2 ml-10 "></div>
          <style>{`.line-height { height: 1px; }`}</style>
       </>
    );
