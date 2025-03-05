@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function CourseCard({ courseId, imageUrl, title, buttonLink, p, li1, li2, li3 }) {
    return (
-      <div className="bg-[#F5F2EC] p-6 rounded-lg shadow-md flex flex-col md:flex-row items-center max-w-4xl mx-auto text-left mb-5">
+      <div className="bg-[#d08a55f0] p-6 rounded-lg shadow-md flex flex-col md:flex-row items-center max-w-4xl mx-auto text-left mb-5">
          {/* Left Section - Image */}
          <div className="w-full md:w-1/2 flex justify-center md:justify-start">
             <div className="bg-gray-300 rounded-lg overflow-hidden w-3/4 md:w-full">
