@@ -38,27 +38,38 @@ function MainPG() {
    ];
 
    return (
-      <>
-         <div className="flex flex-col lg:flex-row items-stretch justify-between w-full px-6 pl-10 mb-12">
+      <div className="w-full">
+      <div className="max-w-[1200px] mx-auto">
+         <div className="flex items-center justify-between p-4 min-h-screen relative flex-wrap ">
             {/* Left Column - Text */}
-            <div className="w-full md:w-1/2 ml-6 text-left flex flex-col mt-24">
-               <h1 className="text-3xl md:text-5xl w-96 font-bold mb-4 text-[#8a552d]">Learn from Syed Ali Haider</h1>
-               <p className="text-lg md:text-xl">
-                  As your relationship counsellor, I’m here to guide you through challenges like infidelity and marital
-                  struggles. Together, we’ll work on healing, rebuilding trust, and creating a stronger foundation.
-                  Let’s take the steps toward a healthier, happier relationship.
-               </p>
-            </div>
+            <div className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 py-12 md:py-0">
+               {/* Left Column - Text Content */}
+               <div className="w-full md:w-1/2 text-left flex flex-col justify-center mb-8 md:mb-0 md:pr-8">
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[#00203FFF] leading-tight">
+                     Learn from Sayed Ali Haider
+                  </h1>
+                  <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
+                     Sayed Ali Haider has helped millions improve their lives and relationships. Now, she's offering a
+                     new way for you to gain access to her thoughtful and unique perspective. Her self-paced courses
+                     will spark new insights and help you improve your relational intelligence.
+                  </p>
 
-            {/* Right Column - Image */}
-            <div className="w-full md:w-1/2 h-full flex justify-end items-center  ">
-               <div className="w-96 h-96 md:w-[500px] md:h-[480px] flex justify-end items-stretch -mr-3 rounded-l-full overflow-hidden">
-                  <img
-                     src={heroImage}
-                     alt="any"
-                     className="w-full h-full object-cover"
-                     style={{ objectPosition: 'right' }}
-                  />
+                  {/* Optional Call to Action Button */}
+                  <div className="mt-6">
+                     <a
+                        href="/courses"
+                        className="  hidden md:inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+                     >
+                        Explore Courses
+                     </a>
+                  </div>
+               </div>
+
+               {/* Right Column - Image */}
+               <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center">
+                  <div className="w-64 h-64 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden shadow-lg">
+                     <img src={heroImage} alt="Ali Haider" className="w-full h-full object-cover object-center" />
+                  </div>
                </div>
             </div>
          </div>
@@ -85,10 +96,11 @@ function MainPG() {
             Helping hundreds of thousands of people create empowered relationships
          </h1>
 
-         <div className="mt-28">
+         <div className="my-28">
             <SlidingBarContainer />
          </div>
-      </>
+      </div>
+      </div>
    );
 }
 

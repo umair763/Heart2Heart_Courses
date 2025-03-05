@@ -5,10 +5,10 @@ import Footer from './Footer';
 
 function Layout() {
    return (
-      <div className="flex flex-col min-h-screen bg-[#c9a06a7c]">
+      <div className="flex flex-col min-h-screen bg-gray-50 w-full">
          <Header />
-         <main className="flex-grow  w-full">
-            <div className=" mx-auto">
+         <main className="">
+            <div className="">
                <Outlet /> {/* This ensures the page content is displayed inside Layout */}
             </div>
          </main>

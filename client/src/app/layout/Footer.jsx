@@ -1,83 +1,140 @@
 import React from 'react';
-import logo from '../../assets/images/h2h brown logo.png';
+import { Link } from 'react-router-dom';
+import { 
+  Facebook, 
+  Twitter, 
+  Instagram, 
+  Linkedin, 
+  Mail 
+} from 'lucide-react';
 
 function Footer() {
    return (
-      <footer className="bg-gray-900 text-white p-6 -mb-6 mt-6">
-         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-xl xs:text-sm md:text-lg lg:text-xl">
-            {/* First Column (Three Rows) */}
-            <div className="space-y-4">
-               <h3 className="text-lg font-semibold">About Us</h3>
-               <ul className="space-y-2">
-                  <li>
-                     <a href="#" className="hover:text-gray-400 transition">
-                        Our Mission
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#" className="hover:text-gray-400 transition">
-                        Team
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#" className="hover:text-gray-400 transition">
-                        Careers
-                     </a>
-                  </li>
-               </ul>
-            </div>
+      <footer className="bg-[#00203FFF] text-white">
+         <div className="container max-w-[1200px] mx-auto px-4 py-12">
+            {/* Main Footer Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+               {/* Logo and Description */}
+               <div className="md:col-span-1">
+                  <h2 className="text-2xl font-bold mb-4">Heart2Heart</h2>
+                  <p className="text-sm text-gray-300">
+                     Empowering relationships through transformative online courses and resources.
+                  </p>
+               </div>
 
-            {/* Second Column (Three Rows) */}
-            <div className="space-y-4">
-               <h3 className="text-lg font-semibold">Support</h3>
-               <ul className="space-y-2">
-                  <li>
-                     <a href="#" className="hover:text-gray-400 transition">
-                        Contact Us
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#" className="hover:text-gray-400 transition">
+               {/* Quick Links */}
+               <div className="md:col-span-1">
+                  <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+                  <nav className="space-y-3">
+                     <Link 
+                        to="/" 
+                        className="block text-gray-300 hover:text-white transition-colors"
+                     >
+                        Home
+                     </Link>
+                     <Link 
+                        to="/courses" 
+                        className="block text-gray-300 hover:text-white transition-colors"
+                     >
+                        Courses
+                     </Link>
+                     <Link 
+                        to="/about" 
+                        className="block text-gray-300 hover:text-white transition-colors"
+                     >
+                        About Us
+                     </Link>
+                     <Link 
+                        to="/contact" 
+                        className="block text-gray-300 hover:text-white transition-colors"
+                     >
+                        Contact
+                     </Link>
+                  </nav>
+               </div>
+
+               {/* Support */}
+               <div className="md:col-span-1">
+                  <h3 className="text-lg font-semibold mb-4">Support</h3>
+                  <nav className="space-y-3">
+                     <Link 
+                        to="/help" 
+                        className="block text-gray-300 hover:text-white transition-colors"
+                     >
                         Help Center
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#" className="hover:text-gray-400 transition">
+                     </Link>
+                     <Link 
+                        to="/faq" 
+                        className="block text-gray-300 hover:text-white transition-colors"
+                     >
                         FAQs
-                     </a>
-                  </li>
-               </ul>
+                     </Link>
+                     <Link 
+                        to="/privacy" 
+                        className="block text-gray-300 hover:text-white transition-colors"
+                     >
+                        Privacy Policy
+                     </Link>
+                     <Link 
+                        to="/terms" 
+                        className="block text-gray-300 hover:text-white transition-colors"
+                     >
+                        Terms of Service
+                     </Link>
+                  </nav>
+               </div>
+
+               {/* Contact */}
+               <div className="md:col-span-1">
+                  <h3 className="text-lg font-semibold mb-4">Contact</h3>
+                  <div className="space-y-3 text-gray-300">
+                     <p>Email: support@heart2heart.com</p>
+                     <p>Phone: +1 (555) 123-4567</p>
+                     
+                     {/* Social Media Icons */}
+                     <div className="flex space-x-4 mt-4">
+                        <a 
+                           href="https://facebook.com" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           className="text-gray-300 hover:text-white transition-colors"
+                        >
+                           <Facebook size={24} />
+                        </a>
+                        <a 
+                           href="https://twitter.com" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           className="text-gray-300 hover:text-white transition-colors"
+                        >
+                           <Twitter size={24} />
+                        </a>
+                        <a 
+                           href="https://instagram.com" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           className="text-gray-300 hover:text-white transition-colors"
+                        >
+                           <Instagram size={24} />
+                        </a>
+                        <a 
+                           href="https://linkedin.com" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           className="text-gray-300 hover:text-white transition-colors"
+                        >
+                           <Linkedin size={24} />
+                        </a>
+                     </div>
+                  </div>
+               </div>
             </div>
 
-            {/* Third Column (Right-Aligned Name) */}
-            <div className="flex flex-col justify-between">
-               <img src={logo} alt="logo" />
-               <p className="text-sm text-right">Courses & Educational Resources</p>
-            </div>
-         </div>
-
-         {/* Bottom Section (Social Media Links) */}
-         <div className="mt-8 border-t border-gray-700 pt-6">
-            <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
-               {/* Social Media Links */}
-               <div className="flex justify-center space-x-6 ">
-                  <a href="#" className="text-gray-400 hover:text-white transition">
-                     <i className="fab fa-facebook-f fa-2x "></i>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition">
-                     <i className="fab fa-twitter fa-2x "></i>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition">
-                     <i className="fab fa-instagram fa-2x "></i>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition">
-                     <i className="fab fa-linkedin fa-2x "></i>
-                  </a>
-               </div>
-               {/* Copyright Section */}
-               <div className="text-center text-sm text-gray-400 sm:col-span-3 mt-4 sm:mt-0">
-                  &copy; 2023 Heart2Heart | All Rights Reserved
-               </div>
+            {/* Bottom Bar */}
+            <div className="mt-12 pt-6 border-t border-gray-800 text-center">
+               <p className="text-sm text-gray-400">
+                  &copy; {new Date().getFullYear()} Heart2Heart. All Rights Reserved.
+               </p>
             </div>
          </div>
       </footer>
