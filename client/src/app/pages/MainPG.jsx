@@ -4,6 +4,7 @@ import heroImage from '../../assets/images/Ali Haider standing2.jpg';
 import courseImage from '../../assets/images/chamcham2person.avif';
 
 function MainPG() {
+   
    const courses = [
       {
          id: 'course-1',
