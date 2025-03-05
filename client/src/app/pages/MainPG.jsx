@@ -40,9 +40,9 @@ function MainPG() {
    return (
       <div className="w-full">
       <div className="max-w-[1200px] mx-auto">
-         <div className="flex items-center justify-between p-4 min-h-screen relative flex-wrap ">
+         <div className="flex items-center justify-between p-4 py-20 relative flex-wrap ">
             {/* Left Column - Text */}
-            <div className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 py-12 md:py-0">
+            <div className="w-full min--screen flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 py md:py-0">
                {/* Left Column - Text Content */}
                <div className="w-full md:w-1/2 text-left flex flex-col justify-center mb-8 md:mb-0 md:pr-8">
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[#00203FFF] leading-tight">
@@ -67,7 +67,7 @@ function MainPG() {
 
                {/* Right Column - Image */}
                <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center">
-                  <div className="w-64 h-64 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden shadow-lg">
+                  <div className="w-full h-auto md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-lg md:rounded-none  md:rounded-l-full overflow-hidden shadow-lg ">
                      <img src={heroImage} alt="Ali Haider" className="w-full h-full object-cover object-center" />
                   </div>
                </div>
