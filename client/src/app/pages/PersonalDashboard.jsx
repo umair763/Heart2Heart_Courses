@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAllCourses } from "../../services/firestore";
+import { getAllCourses } from "../../services/firestore"; // Updated import path
 import AuthContext from "../context/AuthContext";
 
 function PersonalDashboard() {
@@ -18,18 +18,18 @@ function PersonalDashboard() {
 
     // Fetch all courses
     useEffect(() => {
-      getAllCourses()
-          .then((data) => {
-              console.log("Setting courses state:", data);
-              setCourses(data);
-              setLoading(false);
-          })
-          .catch((error) => {
-              console.error("Error fetching courses:", error);
-              setLoading(false);
-          });
-  }, []);
-  
+        console.log("Fetching courses...");
+        getAllCourses()
+            .then((data) => {
+                console.log("Data from Firestore:", data); // Log the fetched data
+                setCourses(data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching courses:", error);
+                setLoading(false);
+            });
+    }, []);
 
     const handleLogout = () => {
         localStorage.removeItem("user");
@@ -44,8 +44,7 @@ function PersonalDashboard() {
             <p>Manage your personal courses and settings here.</p>
 
             <div className="mt-4">
-            <p>Welcome, {user?.email ? user.email : "Guest"}!</p>
-
+                <p>Welcome, {user?.email ? user.email : "Guest"}!</p>
             </div>
 
             <div className="mt-6">
@@ -55,11 +54,11 @@ function PersonalDashboard() {
                 ) : courses.length > 0 ? (
                     <ul>
                         {courses.map((course) => (
-    <li key={course.id} className="mt-2 p-2 border rounded">
-        <h4 className="font-semibold">{course?.title || "No Title"}</h4>
-        <p>{course?.description || "No Description"}</p>
-    </li>
-))}
+                            <li key={course.id} className="mt-2 p-2 border rounded">
+                                <h4 className="font-semibold">{course?.title || "No Title"}</h4>
+                                <p>{course?.description || "No Description"}</p>
+                            </li>
+                        ))}
                     </ul>
                 ) : (
                     <p>No courses available.</p>
