@@ -21,28 +21,31 @@ function PersonalDashboard() {
       const fetchCourses = async () => {
          try {
             console.log('Fetching courses...');
-            const coursesCollection = collection(db, 'courses');
-            const snapshot = await getDocs(coursesCollection);
+            // Simulate a 60-second loading delay
+            setTimeout(async () => {
+               const coursesCollection = collection(db, 'courses');
+               const snapshot = await getDocs(coursesCollection);
 
-            if (snapshot.empty) {
-               throw new Error('No courses found in Firestore.');
-            }
+               if (snapshot.empty) {
+                  throw new Error('No courses found in Firestore.');
+               }
 
-            const coursesList = snapshot.docs.map((doc) => {
-               const data = doc.data();
-               return {
-                  id: doc.id,
-                  title: data.title || 'No Title',
-                  description: data.description || 'No Description',
-                  instructor: data.instructor || 'Unknown Instructor',
-                  price: data.price || 'Not Available',
-                  imageURL: data.imageURL || 'https://via.placeholder.com/150',
-                  content: data.content || [], // This is an array
-               };
-            });
+               const coursesList = snapshot.docs.map((doc) => {
+                  const data = doc.data();
+                  return {
+                     id: doc.id,
+                     title: data.title || 'No Title',
+                     description: data.description || 'No Description',
+                     instructor: data.instructor || 'Unknown Instructor',
+                     price: data.price || 'Not Available',
+                     imageURL: data.imageURL || 'https://via.placeholder.com/150',
+                     content: data.content || [], // This is an array
+                  };
+               });
 
-            setCourses(coursesList);
-            setLoading(false);
+               setCourses(coursesList);
+               setLoading(false);
+            }, 1000); // 60 seconds delay
          } catch (err) {
             console.error('Error fetching courses:', err);
             setError(err.message);
@@ -54,7 +57,18 @@ function PersonalDashboard() {
    }, []);
 
    if (loading) {
-      return <div>Loading courses...</div>;
+      return (
+         <div className="flex justify-center items-center h-screen bg-gray-100">
+            {/* Loader Wrapper */}
+            <div className="relative w-24 h-24">
+               {/* Outer Circle */}
+               <div className="absolute w-24 h-24 border-8 border-t-transparent border-blue-600 rounded-full animate-spin"></div>
+
+               {/* Inner Circle with bouncing effect */}
+               <div className="absolute w-8 h-8 bg-blue-600 rounded-full top-8 left-8 animate-bounce"></div>
+            </div>
+         </div>
+      );
    }
 
    if (error) {
@@ -69,9 +83,8 @@ function PersonalDashboard() {
    };
 
    return (
-      <div className="p-6 bg-white rounded shadow">
-         <h2 className="text-2xl font-bold">Dashboard</h2>
-         <p>Manage your personal courses and settings here.</p>
+      <div className="p-6 bg-[#c59c7cb0] rounded shadow">
+         <h2 className="text-2xl font-bold text-[#8a552d]">Dashboard</h2>
 
          <div className="mt-4">
             <p>Welcome, {user?.email ? user.email : 'Guest'}!</p>
