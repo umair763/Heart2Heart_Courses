@@ -22,7 +22,6 @@ function PersonalDashboard() {
       const fetchCourses = async () => {
          try {
             console.log('Fetching courses...');
-            // Simulate a 60-second loading delay
             setTimeout(async () => {
                const coursesCollection = collection(db, 'courses');
                const snapshot = await getDocs(coursesCollection);
@@ -35,18 +34,18 @@ function PersonalDashboard() {
                   const data = doc.data();
                   return {
                      id: doc.id,
-                     title: data.title || 'No Title',
+                     title: data.title || 'Title',
                      description: data.description || 'No Description',
                      instructor: data.instructor || 'Unknown Instructor',
                      price: data.price || 'Not Available',
                      imageURL: data.imageURL || 'https://via.placeholder.com/150',
-                     content: data.content || [], // This is an array
+                     content: data.content || [],
                   };
                });
 
                setCourses(coursesList);
                setLoading(false);
-            }, 1000); // 60 seconds delay
+            }, 1000);
          } catch (err) {
             console.error('Error fetching courses:', err);
             setError(err.message);
@@ -60,12 +59,8 @@ function PersonalDashboard() {
    if (loading) {
       return (
          <div className="flex justify-center items-center h-screen bg-gray-100">
-            {/* Loader Wrapper */}
             <div className="relative w-24 h-24">
-               {/* Outer Circle */}
                <div className="absolute w-24 h-24 border-8 border-t-transparent border-blue-600 rounded-full animate-spin"></div>
-
-               {/* Inner Circle with bouncing effect */}
                <div className="absolute w-8 h-8 bg-blue-600 rounded-full top-8 left-8 animate-bounce"></div>
             </div>
          </div>
@@ -85,9 +80,27 @@ function PersonalDashboard() {
 
    return (
       <>
+
+<div className="flex items-center justify-center">
+    <div className="text-center">
+        <h2 className="text-2xl font-bold text-[#8a552d]">Dashboard</h2>
+        <div className="mt-2">
+            <p>Welcome, {user?.email ? user.email : 'Guest'}!</p>
+        </div>
+    </div>
+</div>
          <div className="p-6 bg-[#c59c7cb0] rounded shadow">
-         <h1 className="text-3xl ml-20 mt-15 font-serif font-bold text-[#8a552d]">Go to your library</h1>
-         <PurchasedCourseCard
+            <h1 className="text-3xl ml-20 mt-15 font-serif font-bold text-[#8a552d]">your library</h1>
+            <PurchasedCourseCard
+               courseTitle="Conflict Resolution"
+               courseHeading="Turning Conflict Into Connection"
+               courseDescription="What happens when you and a partner are in disagreement? Does it bring you closer together or further apart? In this self-paced course you’ll learn what really causes fighting and disconnection, and how to reconcile in the long-term."
+               courseImage="https://storage.googleapis.com/a1aa/image/E-RyVED8kZ7N--pWBZpKFp3ctS7MFYDI_RRGO1y6Zes.jpg"
+               progress={100}
+               reviewLink="/TurningConflitsIntoConnection"
+               courseLabel="CONFLICT RESOLUTION"
+            />
+            <PurchasedCourseCard
             courseTitle="Conflict Resolution"
             courseHeading="Turning Conflict Into Connection"
             courseDescription="What happens when you and a partner are in disagreement? Does it bring you closer together or further apart? In this self-paced course you’ll learn what really causes fighting and disconnection, and how to reconcile in the long-term."
@@ -96,64 +109,30 @@ function PersonalDashboard() {
             reviewLink="/TurningConflitsIntoConnection"
             courseLabel="CONFLICT RESOLUTION"
          />
-         <PurchasedCourseCard
-            courseTitle="Conflict Resolution"
-            courseHeading="Turning Conflict Into Connection"
-            courseDescription="What happens when you and a partner are in disagreement? Does it bring you closer together or further apart? In this self-paced course you’ll learn what really causes fighting and disconnection, and how to reconcile in the long-term."
-            courseImage="https://storage.googleapis.com/a1aa/image/E-RyVED8kZ7N--pWBZpKFp3ctS7MFYDI_RRGO1y6Zes.jpg"
-            progress={100}
-            reviewLink="/TurningConflitsIntoConnection"
-            courseLabel="CONFLICT RESOLUTION"
-         />
-            <h2 className="text-2xl font-bold text-[#8a552d]">Dashboard</h2>
+           <h2 className="text-2xl font-bold text-[#8a552d] mt-6">More Courses Available</h2> 
 
-            <div className="mt-4">
-               <p>Welcome, {user?.email ? user.email : 'Guest'}!</p>
-            </div>
-
-            <div className="mt-6">
-               <h3 className="text-lg font-semibold">Available Courses</h3>
-               {courses.length > 0 ? (
-                  <ul>
-                     {courses.map((course) => (
-                        <li key={course.id} className="mt-2 p-2 border rounded">
-                           <h4 className="font-semibold">{course.title}</h4>
-                           <p>{course.description}</p>
-                           <p>Instructor: {course.instructor}</p>
-                           <p>Price: ${course.price}</p>
-
-                           {/* Display course content as modules */}
-                           <div>
-                              <h5 className="font-semibold">Course Content:</h5>
-                              {course.content && course.content.length > 0 ? (
-                                 <ul>
-                                    {course.content.map((module, index) => (
-                                       <li key={index}>
-                                          {index % 2 === 0 ? (
-                                             <strong>{module}</strong> // Display Module Name
-                                          ) : (
-                                             <video controls width="100%">
-                                                <source src={module} type="video/mp4" />
-                                                Your browser does not support the video tag.
-                                             </video> // Display video if it's a URL
-                                          )}
-                                       </li>
-                                    ))}
-                                 </ul>
-                              ) : (
-                                 <p>No content available for this course.</p>
-                              )}
-                           </div>
-
-                           <div>
-                              <img src={course.imageURL} alt={course.title} className="w-full h-48 object-cover mt-2" />
-                           </div>
-                        </li>
-                     ))}
-                  </ul>
-               ) : (
-                  <p>No courses available.</p>
-               )}
+            <div className="grid grid-cols-3 gap-6 mt-6">
+               {[...Array(3)].map((_, index) => (
+                  <div key={index} className="p-4 border rounded shadow bg-white">
+                     <h3 className="text-lg font-semibold text-center">Courses Section {index + 1}</h3>
+                     {courses.length > 0 ? (
+                        <div className="grid grid-cols-1 gap-6 mt-4">
+                           {courses.map((course) => (
+                              <div key={course.id} className="p-4 border rounded shadow bg-white">
+                                 <img src={course.imageURL} alt={course.title} className="w-full h-48 object-cover rounded" />
+                                 <h4 className="text-xl font-semibold mt-2">{course.title}</h4>
+                                 <p className="text-gray-700 mt-1">{course.description}</p>
+                                 <p className="text-sm text-gray-500">Instructor: {course.instructor}</p>
+                                 <p className="font-semibold mt-1">Price: ${course.price}</p>
+                                 <p className="text-blue-600 font-semibold mt-1">Module: {course.module}</p>
+                              </div>
+                           ))}
+                        </div>
+                     ) : (
+                        <p className="text-gray-600 mt-2">No courses available.</p>
+                     )}
+                  </div>
+               ))}
             </div>
 
             <div className="mt-6">
@@ -163,7 +142,7 @@ function PersonalDashboard() {
 
             <button
                onClick={handleLogout}
-               className="mt-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+               className="mt-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-auto block"
             >
                Logout
             </button>

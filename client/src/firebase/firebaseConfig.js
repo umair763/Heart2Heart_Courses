@@ -1,9 +1,8 @@
 // firebaseConfig.js
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js';
-import { getAuth } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js'; // Firebase Auth
+import { getAuth, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js'; // Firebase Auth
 import { getStorage } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-storage.js';
-
 
 const firebaseConfig = {
    apiKey: 'AIzaSyDCx-6-ePvaajHxqpci12NivlegOwPdBxw',
@@ -23,4 +22,10 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
 
-export { db, auth, storage};
+// Set persistence to LOCAL (this ensures the user stays logged in)
+setPersistence(auth, browserLocalPersistence)
+   .catch((error) => {
+      console.error("Error setting auth persistence:", error);
+   });
+
+export { db, auth, storage };

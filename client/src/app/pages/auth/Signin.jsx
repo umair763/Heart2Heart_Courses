@@ -68,7 +68,7 @@ function Signin() {
             />
             
             <h2 className="text-3xl font-bold text-[#92553D] text-center">Sign in</h2>
-            <p className="text-gray-500 mt-2 text-center">Welcome to Heart2Heart Dashboard</p>
+            <p className="text-gray-500 mt-2 text-center">Welcome to Heart2Heart </p>
 
             {error && <p className="text-red-500 mt-2 text-center">{error}</p>}
             {resetMessage && <p className="text-green-500 mt-2 text-center">{resetMessage}</p>}

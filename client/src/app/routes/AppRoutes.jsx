@@ -11,6 +11,7 @@ import CourseContent from '../pages/CourseContent';
 import ReviewModules from '../pages/ReviewModules';
 import TurningConflitsIntoConnection from '../pages/TurningConflitsIntoConnection';
 import TurningConflitsIntoConnectionContent from '../pages/TurningConflitsIntoConnectionContent';
+import CourseReview from '../pages/TurningConflitsIntoConnectionContent';
 
 function AppRoutes() {
    return (
@@ -27,6 +28,7 @@ function AppRoutes() {
             {/* Protected Routes */}
             <Route path="/coursecontent" element={<CourseContent />} />
             <Route path="/reviewmodules" element={<ReviewModules />} />
+            <Route path="/review/:courseId" element={<CourseReview />} />
             <Route path="/TurningConflitsIntoConnection" element={<TurningConflitsIntoConnection />} />
             <Route path="/TurningConflitsIntoConnectionContent" element={<TurningConflitsIntoConnectionContent />} />
             <Route element={<ProtectedRoutes />}>

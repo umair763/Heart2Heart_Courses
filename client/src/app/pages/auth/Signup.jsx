@@ -74,7 +74,7 @@ const SignUp = () => {
          <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md flex flex-col items-center">
             <img src={logo} alt="H2H Logo" className="w-32 mb-4" />
             <h2 className="text-3xl font-bold text-[#92553D] text-center">Create Account</h2>
-            <p className="text-gray-500 mt-2 text-center">Sign up at Heart2Heart Dashboard</p>
+            <p className="text-gray-500 mt-2 text-center">Sign up at Heart2Heart </p>
 
             {error && <p className="text-red-500 mt-2">{error}</p>}
 
