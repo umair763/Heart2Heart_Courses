@@ -32,47 +32,51 @@ const SlidingBarContainer = () => {
          <div className="sliding-container ">
             {/* First set of SlidingBar components */}
             <SlidingBar
-               name="JOANIE"
+               name="Amina Toure"
                stars={5}
-               review="Amazing course , easy and short ! We keep thing simple ! Love it !Thank you for this !."
-            />
-            <SlidingBar
-               name="Amanda Willis"
-               stars={5}
-               review="I’ve listened to Ali Haider’s podcast and I trust what she has to say. Even in the first module I found painful realizations that will inevitably lead to better communication, conflict resolution, and relational repair in the future. I only hope more people will take interest and engage with the opportunity to grow."
-            />
-            <SlidingBar
-               name="KK Harvey"
-               stars={5}
-               review="A recent break up that ended after an argument brought me into your course. I wanted to see why the same arguments were coming up and try to see what my role and responsibility were in these arguments. The course opened my eyes to my fighting style, insecurities and reasons that we were repeating the same argument. I was fighting rather than expressing what I was FEELING. I feel that I have a much better handle on how to diffuse or at least take a break before reacting and how to express what I am feeling rather than attacking. Thank you so much for an excellent course."
-            />
-            <SlidingBar
-               name="M.McSweeney"
-               stars={5}
-               review="Becoming better at addressing conflict in positive ways at home and at work is an ongoing goal. Learning to use the 'space' between the trigger and the response as something each person can control was one of the concepts that caught my attention. Remembering we are free to change how we respond to conflict was a great reminder!"
-            />
-            <SlidingBar
-               name="Ana"
-               stars={5}
-               review="I took the course after a possibly relationship ending fight where I realized my partner and I seemed to never speak the same language. I learned so much from this course including that fights are never really about what you're fighting for in the moment! We've been trapped in a hopeless cycle of fights because neither of us ever dared ask the other directly for what we wanted or needed from them. The result was years of accumulated frustration, resentment, contempt, loneliness, etc.
-It may be too late to save my current/past relationship-- there only time will tell-- but the lessons from this course will serve me in EVERY relationship in my life now and moving forward. I can at least work on cleaning up my side of the street. Thank you, Ali Haider, for all that you do. Keep them coming :)"
+               review="This program was such a game-changer for me. The lessons were simple, effective, and straight to the point! I now feel much more equipped to handle conflict in a healthy way. Thanks a lot for offering such a valuable course!"
             />
 
-            {/* Duplicate the set of SlidingBar components for seamless loop */}
             <SlidingBar
-               name="Brenda Hixon"
+               name="Claudia Rojas"
                stars={5}
-               review="I feel as humans we are so often eager to prove we are right, we fail to see the other individuals point or even acknowledge their feelings. After this course I know that I always need to take accountability for my part be it right or wrong."
+               review="I’ve been following Syed Ali Haider for a while now, and after listening to the podcast, I knew this course would be beneficial. The first module alone made me realize some things I never even thought about. The impact it’s had on my communication skills and my relationship has been incredible. I just wish everyone could experience this growth."
             />
+
             <SlidingBar
-               name="Donna Griva"
+               name="Tariq Ndungu"
                stars={5}
-               review="The course appealed to me because conflict, for me, especially in my marriage, is often a way one street that leads to nowhere. Hearing the 'broken record' over and over, wondering why are we here again and why can we not resolve this is frustrating, lonely and at times hopeless. Ali Haider brings her deep understanding of relationships and human nature along with her passion and warmth to really dig down past the repeated patterns and open up a more holistic view of why we fight, why conflict plays out with the same responses over and over again and how we can break the cycle. I am glad that I took some quiet time to complete the workbook as it helped me to integrate Ali Haider's teachings on a more personal level and allowed me to open up mine and my partner's patterns of conflict. For me, if I can see one thing that will change in my personal relationship since completing the course, it is to step back and observe with kindness my partner's responses and relax my defensiveness. This course brings a rich and sophisticated intelligence to love and relationships."
+               review="After a difficult breakup, I decided to give this course a shot. I was tired of repeating the same arguments in my relationships. The course helped me recognize unhealthy patterns I didn’t even know existed. It taught me how to express my feelings rather than letting anger take over. Now, I feel more in control and have better tools to communicate when things get tough. Highly recommended!"
             />
+
             <SlidingBar
-               name="Lisa Weinreich"
+               name="Charlotte Dupont"
                stars={5}
-               review="I came to this course to improve how I communicate with my husband and closed loved ones. This course has given me useful tools which I've already started to utilize in my daily life! I'm striving to be more curious, reflective and less reactionary and triggered openly. Thank you, Ali Haider!"
+               review="Improving how I approach conflict at work and at home is something I’m constantly working on. The idea of creating space between the trigger and my reaction was a big breakthrough for me. It’s a constant reminder that I have control over how I respond to situations, and that’s been incredibly empowering."
+            />
+
+            <SlidingBar
+               name="Liu Wei"
+               stars={5}
+               review="I joined this course after a serious fight with my partner. It felt like we were always speaking different languages and couldn’t resolve our issues. This course taught me that most of our arguments were rooted in unmet needs rather than the surface-level issues we were arguing about. I may not know the outcome of my current relationship yet, but the lessons I learned will certainly guide me in the future. I’m grateful for this experience!"
+            />
+
+            <SlidingBar
+               name="Emilia Kolar"
+               stars={5}
+               review="We often try to prove ourselves right in an argument, without truly listening to the other person. This course made me realize the importance of taking responsibility for my own part in conflicts, regardless of who’s ‘right.’ It has really helped me be more mindful in my relationships."
+            />
+
+            <SlidingBar
+               name="Michael O’Donnell"
+               stars={5}
+               review="In my marriage, conflict often felt like a never-ending cycle that we couldn’t break. Syed Ali Haider’s course opened my eyes to the deeper reasons behind these repetitive patterns. I’m now able to step back and observe my reactions with more compassion and understanding. The course was incredibly insightful and I highly recommend it to anyone struggling with communication in their relationships."
+            />
+
+            <SlidingBar
+               name="Sofia Vasquez"
+               stars={5}
+               review="I took this course because I wanted to improve my communication with my husband and family. It’s been incredibly helpful in giving me the tools to be more present, patient, and intentional in how I engage with them. I’m already seeing positive changes and am looking forward to growing even more!"
             />
          </div>
       </div>

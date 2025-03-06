@@ -32,7 +32,7 @@ function CoursePage() {
       },
       {
          id: 'course-3',
-         title: 'Turning Conflicts Into Connection',
+         title: 'Playing with Desires',
          description:
             'Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck. Discover a new sense of hope and possibility.',
          imageUrl: courseImage,
@@ -183,10 +183,10 @@ function CoursePage() {
                      {/* Left Column - Text Content */}
                      <div className="w-full md:w-1/2 text-left flex flex-col justify-center mb-8 md:mb-0 md:pr-8 p-3 sm:p-5 md:p-6">
                         <h1 className="text-3xl font-serif md:text-4xl lg:text-5xl font-bold mb-4 text-[#8a552d] leading-tight">
-                           Taught by Sayed Ali Haider
+                           Taught by Syed Ali Haider
                         </h1>
                         <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                           Sayed Ali Haider has helped millions improve their lives and relationships. Now, she's
+                           Syed Ali Haider has helped millions improve their lives and relationships. Now, she's
                            offering a new way for you to gain access to her thoughtful and unique perspective. Her
                            self-paced courses will spark new insights and help you improve your relational intelligence.
                         </p>
@@ -245,7 +245,7 @@ function CoursePage() {
                <div className="text-center md:text-left mb-12">
                   <h2 className="text-sm font-semibold text-[#1a1a1a] mb-6">WHY IT WORKS</h2>
                   <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#1a1a1a] leading-tight">
-                     Sayed Ali Haider helps you understand, embrace, and reignite your desire.
+                     Syed Ali Haider helps you understand, embrace, and reignite your desire.
                   </h1>
                </div>
                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -306,7 +306,7 @@ function CoursePage() {
          {/* note:: final card */}
          <div className="flex items-center justify-center min-h-screen">
             <div className="bg-[#0b0b5a] text-white rounded-lg p-8 md:p-16 max-w-4xl mx-auto text-center relative">
-               <h2 className="text-sm uppercase tracking-widest mb-4">Sayed Ali Haider's Guarantee</h2>
+               <h2 className="text-sm uppercase tracking-widest mb-4">Syed Ali Haider's Guarantee</h2>
                <h1 className="text-3xl md:text-5xl font-bold mb-6">
                   If this doesn't improve your relationship, get your money back.
                </h1>

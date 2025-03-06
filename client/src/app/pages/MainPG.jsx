@@ -47,7 +47,7 @@ function MainPG() {
                   {/* Left Column - Text Content */}
                   <div className="w-full md:w-1/2 text-left flex flex-col justify-center mb-8 md:mb-0 md:pr-8 p-3 sm:p-5 md:p-6">
                      <h1 className="text-3xl font-serif md:text-4xl lg:text-5xl font-bold mb-4 text-[#8a552d] leading-tight">
-                        Learn from Sayed Ali Haider
+                        Learn from Syed Ali Haider
                      </h1>
                      <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                         Sayed Ali Haider has helped millions improve their lives and relationships. Now, she's offering

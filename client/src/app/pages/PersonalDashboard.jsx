@@ -12,7 +12,7 @@ function PersonalDashboard() {
     // Redirect if not authenticated
     useEffect(() => {
         if (!isAuthenticated) {
-            navigate("/Signin", { replace: true });
+            navigate("/signin", { replace: true });
         }
     }, [isAuthenticated, navigate]);
 

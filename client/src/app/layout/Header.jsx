@@ -32,7 +32,7 @@ const Header2 = () => {
             >
                <div className="flex justify-between p-6 text-[#8a552d]  ">
                   <Link to="/" className=" text-2xl font-bold " onClick={closeMenu}>
-                     Heart2Heart
+                     Syed Ali Haider
                   </Link>
 
                   <button onClick={closeMenu} aria-label="Close menu" className="p-2">
@@ -57,7 +57,7 @@ const Header2 = () => {
             <div className="flex items-center justify-between py-4">
                {/* Logo */}
                <Link to="/" className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold">
-                  Heart2Heart
+                  Syed Ali Haider
                </Link>
 
                {/* Desktop Navigation Links */}

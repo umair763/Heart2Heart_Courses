@@ -22,15 +22,15 @@ function Footer() {
                      <Link to="/" className="block text-gray-300 hover:text-white transition-colors">
                         Home
                      </Link>
-                     <Link to="/courses" className="block text-gray-300 hover:text-white transition-colors">
+                     <Link to="/" className="block text-gray-300 hover:text-white transition-colors">
                         Courses
                      </Link>
                      <Link to="/about" className="block text-gray-300 hover:text-white transition-colors">
                         About Us
                      </Link>
-                     <Link to="/contact" className="block text-gray-300 hover:text-white transition-colors">
+                     {/* <Link to="/contact" className="block text-gray-300 hover:text-white transition-colors">
                         Contact
-                     </Link>
+                     </Link> */}
                   </nav>
                </div>
 
@@ -38,12 +38,12 @@ function Footer() {
                <div className="md:col-span-1">
                   <h3 className="text-lg font-semibold mb-4">Support</h3>
                   <nav className="space-y-3">
-                     <Link to="/help" className="block text-gray-300 hover:text-white transition-colors">
+                     {/* <Link to="/help" className="block text-gray-300 hover:text-white transition-colors">
                         Help Center
                      </Link>
                      <Link to="/faq" className="block text-gray-300 hover:text-white transition-colors">
                         FAQs
-                     </Link>
+                     </Link> */}
                      <Link to="/privacy" className="block text-gray-300 hover:text-white transition-colors">
                         Privacy Policy
                      </Link>
@@ -62,7 +62,7 @@ function Footer() {
 
                      {/* Social Media Icons */}
                      <div className="flex space-x-4 mt-4">
-                        <a
+                        {/* <a
                            href="https://facebook.com"
                            target="_blank"
                            rel="noopener noreferrer"
@@ -77,7 +77,7 @@ function Footer() {
                            className="text-gray-300 hover:text-white transition-colors"
                         >
                            <Twitter size={24} />
-                        </a>
+                        </a> */}
                         <a
                            href="https://instagram.com"
                            target="_blank"
@@ -86,14 +86,14 @@ function Footer() {
                         >
                            <Instagram size={24} />
                         </a>
-                        <a
+                        {/* <a
                            href="https://linkedin.com"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="text-gray-300 hover:text-white transition-colors"
                         >
                            <Linkedin size={24} />
-                        </a>
+                        </a> */}
                      </div>
                   </div>
                </div>
