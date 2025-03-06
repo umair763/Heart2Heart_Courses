@@ -4,7 +4,6 @@ import heroImage from '../../assets/images/Ali Haider standing2.jpg';
 import courseImage from '../../assets/images/chamcham2person.avif';
 
 function MainPG() {
-   
    const courses = [
       {
          id: 'course-1',
@@ -41,7 +40,8 @@ function MainPG() {
    return (
       <div className="w-full">
          <div className="max-w-[1200px] mx-auto">
-            <div className="flex items-center justify-between  relative flex-wrap ">
+            {/* Hero Section */}
+            <div className="flex items-center justify-between relative flex-wrap">
                {/* Left Column - Text */}
                <div className="w-full min--screen flex flex-col sm:flex-row lg:flex-row md:flex-row items-center justify-center">
                   {/* Left Column - Text Content */}
@@ -54,27 +54,18 @@ function MainPG() {
                         a new way for you to gain access to her thoughtful and unique perspective. Her self-paced
                         courses will spark new insights and help you improve your relational intelligence.
                      </p>
-
-                     {/* Optional Call to Action Button */}
-                     {/* <div className="mt-6">
-                        <a
-                           href="/courses"
-                           className="  hidden md:inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-                        >
-                           Explore Courses
-                        </a>
-                     </div> */}
                   </div>
 
                   {/* Right Column - Image */}
                   <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center lg:-mr-13">
-                     <div className="w-full h-auto md:w-96 md:h-96 lg:w-[500px] lg:h-[450px] rounded-l-full overflow-hidden shadow-lg ">
+                     <div className="w-full h-auto md:w-96 md:h-96 lg:w-[500px] lg:h-[450px] rounded-l-full overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
                         <img src={heroImage} alt="Ali Haider" className="w-full h-full object-cover object-center" />
                      </div>
                   </div>
                </div>
             </div>
 
+            {/* Courses Section */}
             <h1 className="text-3xl md:text-4xl font-bold mb-4 mt-6 ml-15 font-serif text-[#8a552d]">
                Explore all courses
             </h1>
@@ -95,6 +86,7 @@ function MainPG() {
                ))}
             </div>
 
+            {/* Testimonial Section */}
             <h1 className="text-3xl md:text-4xl font-bold text-center mx-auto mt-28 w-1/2 text-[#8a552d]">
                Helping hundreds of thousands of people create empowered relationships
             </h1>

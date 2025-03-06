@@ -4,6 +4,6 @@ git pull origin
 
 git add .
 
-git commit -m "i love luqman"
+git commit -m ""
 
 git push origin main 

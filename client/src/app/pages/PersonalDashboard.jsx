@@ -34,7 +34,7 @@ function PersonalDashboard() {
                   const data = doc.data();
                   return {
                      id: doc.id,
-                     title: data.title || 'Title',
+                     title: data.title || 'Phyco Relationship',
                      description: data.description || 'No Description',
                      instructor: data.instructor || 'Unknown Instructor',
                      price: data.price || 'Not Available',
@@ -88,7 +88,7 @@ function PersonalDashboard() {
          </div>
 
          <div className="p-6 bg-[#c59c7cb0] rounded-lg shadow-lg max-w-6xl mx-auto">
-            <h1 className="text-4xl font-serif font-bold text-[#8a552d] mb-6">Your Library</h1>
+            <h1 className="text-4xl font-serif font-bold text-[#120A16] mb-6">Your Library</h1>
 
             {/* Purchased Course Cards */}
             <div className="space-y-6">
@@ -113,7 +113,7 @@ function PersonalDashboard() {
                />
             </div>
 
-            <h2 className="text-2xl font-bold text-[#8a552d] mt-8">More Courses Available</h2>
+            <h2 className="text-2xl font-bold text-[#120A16] mt-8">More Courses Available</h2>
 
             {/* First Course Grid (Left-aligned) */}
             <div className="grid md:grid-cols-3 gap-6 mt-6">
