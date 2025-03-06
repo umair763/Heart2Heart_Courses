@@ -5,7 +5,7 @@ import logo from '../../assets/images/h2h brown logo.png';
 
 function Footer() {
    return (
-      <footer className="bg-[#00203FFF] text-white">
+      <footer className="bg-[#120A16] text-white">
          <div className="container max-w-[1200px] mx-auto px-4 py-12">
             {/* Main Footer Grid */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

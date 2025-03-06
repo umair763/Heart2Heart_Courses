@@ -68,7 +68,7 @@ function PersonalDashboard() {
    }
 
    if (error) {
-      return <div>Error: {error}</div>;
+      return <div className="text-center text-red-500 font-semibold text-lg">Error: {error}</div>;
    }
 
    const handleLogout = () => {
@@ -80,69 +80,95 @@ function PersonalDashboard() {
 
    return (
       <>
+         <div className="flex items-center justify-center p-6">
+            <div className="text-center">
+               <h2 className="text-3xl font-bold text-[#8a552d]">Dashboard</h2>
+               <p className="mt-2 text-lg text-gray-700">Welcome, {user?.email ? user.email : 'Guest'}!</p>
+            </div>
+         </div>
 
-<div className="flex items-center justify-center">
-    <div className="text-center">
-        <h2 className="text-2xl font-bold text-[#8a552d]">Dashboard</h2>
-        <div className="mt-2">
-            <p>Welcome, {user?.email ? user.email : 'Guest'}!</p>
-        </div>
-    </div>
-</div>
-         <div className="p-6 bg-[#c59c7cb0] rounded shadow">
-            <h1 className="text-3xl ml-20 mt-15 font-serif font-bold text-[#8a552d]">your library</h1>
-            <PurchasedCourseCard
-               courseTitle="Conflict Resolution"
-               courseHeading="Turning Conflict Into Connection"
-               courseDescription="What happens when you and a partner are in disagreement? Does it bring you closer together or further apart? In this self-paced course you’ll learn what really causes fighting and disconnection, and how to reconcile in the long-term."
-               courseImage="https://storage.googleapis.com/a1aa/image/E-RyVED8kZ7N--pWBZpKFp3ctS7MFYDI_RRGO1y6Zes.jpg"
-               progress={100}
-               reviewLink="/TurningConflitsIntoConnection"
-               courseLabel="CONFLICT RESOLUTION"
-            />
-            <PurchasedCourseCard
-            courseTitle="Conflict Resolution"
-            courseHeading="Turning Conflict Into Connection"
-            courseDescription="What happens when you and a partner are in disagreement? Does it bring you closer together or further apart? In this self-paced course you’ll learn what really causes fighting and disconnection, and how to reconcile in the long-term."
-            courseImage="https://storage.googleapis.com/a1aa/image/E-RyVED8kZ7N--pWBZpKFp3ctS7MFYDI_RRGO1y6Zes.jpg"
-            progress={100}
-            reviewLink="/TurningConflitsIntoConnection"
-            courseLabel="CONFLICT RESOLUTION"
-         />
-           <h2 className="text-2xl font-bold text-[#8a552d] mt-6">More Courses Available</h2> 
+         <div className="p-6 bg-[#c59c7cb0] rounded-lg shadow-lg max-w-6xl mx-auto">
+            <h1 className="text-4xl font-serif font-bold text-[#8a552d] mb-6">Your Library</h1>
 
-            <div className="grid grid-cols-3 gap-6 mt-6">
-               {[...Array(3)].map((_, index) => (
-                  <div key={index} className="p-4 border rounded shadow bg-white">
-                     <h3 className="text-lg font-semibold text-center">Courses Section {index + 1}</h3>
-                     {courses.length > 0 ? (
-                        <div className="grid grid-cols-1 gap-6 mt-4">
-                           {courses.map((course) => (
-                              <div key={course.id} className="p-4 border rounded shadow bg-white">
-                                 <img src={course.imageURL} alt={course.title} className="w-full h-48 object-cover rounded" />
-                                 <h4 className="text-xl font-semibold mt-2">{course.title}</h4>
-                                 <p className="text-gray-700 mt-1">{course.description}</p>
-                                 <p className="text-sm text-gray-500">Instructor: {course.instructor}</p>
-                                 <p className="font-semibold mt-1">Price: ${course.price}</p>
-                                 <p className="text-blue-600 font-semibold mt-1">Module: {course.module}</p>
-                              </div>
-                           ))}
+            {/* Purchased Course Cards */}
+            <div className="space-y-6">
+               <PurchasedCourseCard
+                  courseTitle="Conflict Resolution"
+                  courseHeading="Turning Conflict Into Connection"
+                  courseDescription="Learn what really causes fighting and disconnection, and how to reconcile in the long-term."
+                  courseImage="https://storage.googleapis.com/a1aa/image/E-RyVED8kZ7N--pWBZpKFp3ctS7MFYDI_RRGO1y6Zes.jpg"
+                  progress={100}
+                  reviewLink="/TurningConflitsIntoConnection"
+                  courseLabel="CONFLICT RESOLUTION"
+               />
+
+               <PurchasedCourseCard
+                  courseTitle="Conflict Resolution"
+                  courseHeading="Turning Conflict Into Connection"
+                  courseDescription="What happens when you and a partner are in disagreement? Does it bring you closer together or further apart? In this self-paced course you’ll learn what really causes fighting and disconnection, and how to reconcile in the long-term."
+                  courseImage="https://storage.googleapis.com/a1aa/image/E-RyVED8kZ7N--pWBZpKFp3ctS7MFYDI_RRGO1y6Zes.jpg"
+                  progress={100}
+                  reviewLink="/TurningConflitsIntoConnection"
+                  courseLabel="CONFLICT RESOLUTION"
+               />
+            </div>
+
+            <h2 className="text-2xl font-bold text-[#8a552d] mt-8">More Courses Available</h2>
+
+            {/* First Course Grid (Left-aligned) */}
+            <div className="grid md:grid-cols-3 gap-6 mt-6">
+               {courses.length > 0 ? (
+                  courses.map((course) => (
+                     <div
+                        key={course.id}
+                        className="p-4 border rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300"
+                     >
+                        <img
+                           src={course.imageURL}
+                           alt={course.title}
+                           className="w-full h-48 object-cover rounded-lg"
+                        />
+                        <h4 className="text-xl font-semibold mt-3 text-gray-800">{course.title}</h4>
+                        <p className="text-gray-700 mt-1">{course.description}</p>
+                        <p className="text-sm text-gray-500">Instructor: {course.instructor}</p>
+                        <p className="font-semibold mt-2 text-gray-800">Price: ${course.price}</p>
+                     </div>
+                  ))
+               ) : (
+                  <p className="text-gray-600 mt-2">No courses available.</p>
+               )}
+            </div>
+
+            {/* Second Course Grid (Centered) */}
+            <div className="flex justify-center">
+               <div className="grid md:grid-cols-3 gap-6 mt-6 max-w-6xl w-full">
+                  {courses.length > 0 ? (
+                     courses.map((course) => (
+                        <div
+                           key={course.id}
+                           className="p-4 border rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300"
+                        >
+                           <img
+                              src={course.imageURL}
+                              alt={course.title}
+                              className="w-full h-48 object-cover rounded-lg"
+                           />
+                           <h4 className="text-xl font-semibold mt-3 text-gray-800">{course.title}</h4>
+                           <p className="text-gray-700 mt-1">{course.description}</p>
+                           <p className="text-sm text-gray-500">Instructor: {course.instructor}</p>
+                           <p className="font-semibold mt-2 text-gray-800">Price: ${course.price}</p>
                         </div>
-                     ) : (
-                        <p className="text-gray-600 mt-2">No courses available.</p>
-                     )}
-                  </div>
-               ))}
+                     ))
+                  ) : (
+                     <p className="text-gray-600 mt-2">No courses available.</p>
+                  )}
+               </div>
             </div>
 
-            <div className="mt-6">
-               <h3 className="text-lg font-semibold">Settings</h3>
-               <p>Change Profile information here</p>
-            </div>
-
+            {/* Logout Button */}
             <button
                onClick={handleLogout}
-               className="mt-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-auto block"
+               className="mt-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg mx-auto block transition-all duration-300"
             >
                Logout
             </button>
