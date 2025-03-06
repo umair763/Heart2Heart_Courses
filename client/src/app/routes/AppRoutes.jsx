@@ -7,6 +7,10 @@ import PersonalDashboard from '../pages/PersonalDashboard';
 import MainPG from '../pages/MainPG';
 import CoursePage from '../pages/CoursePage';
 import ProtectedRoutes from '../../ProtectedRoutes';
+import CourseContent from '../pages/CourseContent';
+import ReviewModules from '../pages/ReviewModules';
+import TurningConflitsIntoConnection from '../pages/TurningConflitsIntoConnection';
+import TurningConflitsIntoConnectionContent from '../pages/TurningConflitsIntoConnectionContent';
 
 function AppRoutes() {
    return (
@@ -21,6 +25,10 @@ function AppRoutes() {
             <Route path="/course/:courseId" element={<CoursePage />} />
             {/* <Route path="courses" element={<CoursePage />} /> */}
             {/* Protected Routes */}
+            <Route path="/coursecontent" element={<CourseContent />} />
+            <Route path="/reviewmodules" element={<ReviewModules />} />
+            <Route path="/TurningConflitsIntoConnection" element={<TurningConflitsIntoConnection />} />
+            <Route path="/TurningConflitsIntoConnectionContent" element={<TurningConflitsIntoConnectionContent />} />
             <Route element={<ProtectedRoutes />}>
                <Route path="/dashboard" element={<PersonalDashboard />} />
             </Route>

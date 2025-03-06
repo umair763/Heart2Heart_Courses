@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import { db } from '../../firebase/firebaseConfig';
 import { collection, getDocs } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js';
+import PurchasedCourseCard from '../../components/common/PurchasedCourseCard';
 
 function PersonalDashboard() {
    const navigate = useNavigate();
@@ -83,70 +84,91 @@ function PersonalDashboard() {
    };
 
    return (
-      <div className="p-6 bg-[#c59c7cb0] rounded shadow">
-         <h2 className="text-2xl font-bold text-[#8a552d]">Dashboard</h2>
+      <>
+         <div className="p-6 bg-[#c59c7cb0] rounded shadow">
+         <h1 className="text-3xl ml-20 mt-15 font-serif font-bold text-[#8a552d]">Go to your library</h1>
+         <PurchasedCourseCard
+            courseTitle="Conflict Resolution"
+            courseHeading="Turning Conflict Into Connection"
+            courseDescription="What happens when you and a partner are in disagreement? Does it bring you closer together or further apart? In this self-paced course you’ll learn what really causes fighting and disconnection, and how to reconcile in the long-term."
+            courseImage="https://storage.googleapis.com/a1aa/image/E-RyVED8kZ7N--pWBZpKFp3ctS7MFYDI_RRGO1y6Zes.jpg"
+            progress={100}
+            reviewLink="/TurningConflitsIntoConnection"
+            courseLabel="CONFLICT RESOLUTION"
+         />
+         <PurchasedCourseCard
+            courseTitle="Conflict Resolution"
+            courseHeading="Turning Conflict Into Connection"
+            courseDescription="What happens when you and a partner are in disagreement? Does it bring you closer together or further apart? In this self-paced course you’ll learn what really causes fighting and disconnection, and how to reconcile in the long-term."
+            courseImage="https://storage.googleapis.com/a1aa/image/E-RyVED8kZ7N--pWBZpKFp3ctS7MFYDI_RRGO1y6Zes.jpg"
+            progress={100}
+            reviewLink="/TurningConflitsIntoConnection"
+            courseLabel="CONFLICT RESOLUTION"
+         />
+            <h2 className="text-2xl font-bold text-[#8a552d]">Dashboard</h2>
 
-         <div className="mt-4">
-            <p>Welcome, {user?.email ? user.email : 'Guest'}!</p>
+            <div className="mt-4">
+               <p>Welcome, {user?.email ? user.email : 'Guest'}!</p>
+            </div>
+
+            <div className="mt-6">
+               <h3 className="text-lg font-semibold">Available Courses</h3>
+               {courses.length > 0 ? (
+                  <ul>
+                     {courses.map((course) => (
+                        <li key={course.id} className="mt-2 p-2 border rounded">
+                           <h4 className="font-semibold">{course.title}</h4>
+                           <p>{course.description}</p>
+                           <p>Instructor: {course.instructor}</p>
+                           <p>Price: ${course.price}</p>
+
+                           {/* Display course content as modules */}
+                           <div>
+                              <h5 className="font-semibold">Course Content:</h5>
+                              {course.content && course.content.length > 0 ? (
+                                 <ul>
+                                    {course.content.map((module, index) => (
+                                       <li key={index}>
+                                          {index % 2 === 0 ? (
+                                             <strong>{module}</strong> // Display Module Name
+                                          ) : (
+                                             <video controls width="100%">
+                                                <source src={module} type="video/mp4" />
+                                                Your browser does not support the video tag.
+                                             </video> // Display video if it's a URL
+                                          )}
+                                       </li>
+                                    ))}
+                                 </ul>
+                              ) : (
+                                 <p>No content available for this course.</p>
+                              )}
+                           </div>
+
+                           <div>
+                              <img src={course.imageURL} alt={course.title} className="w-full h-48 object-cover mt-2" />
+                           </div>
+                        </li>
+                     ))}
+                  </ul>
+               ) : (
+                  <p>No courses available.</p>
+               )}
+            </div>
+
+            <div className="mt-6">
+               <h3 className="text-lg font-semibold">Settings</h3>
+               <p>Change Profile information here</p>
+            </div>
+
+            <button
+               onClick={handleLogout}
+               className="mt-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            >
+               Logout
+            </button>
          </div>
-
-         <div className="mt-6">
-            <h3 className="text-lg font-semibold">Available Courses</h3>
-            {courses.length > 0 ? (
-               <ul>
-                  {courses.map((course) => (
-                     <li key={course.id} className="mt-2 p-2 border rounded">
-                        <h4 className="font-semibold">{course.title}</h4>
-                        <p>{course.description}</p>
-                        <p>Instructor: {course.instructor}</p>
-                        <p>Price: ${course.price}</p>
-
-                        {/* Display course content as modules */}
-                        <div>
-                           <h5 className="font-semibold">Course Content:</h5>
-                           {course.content && course.content.length > 0 ? (
-                              <ul>
-                                 {course.content.map((module, index) => (
-                                    <li key={index}>
-                                       {index % 2 === 0 ? (
-                                          <strong>{module}</strong> // Display Module Name
-                                       ) : (
-                                          <video controls width="100%">
-                                             <source src={module} type="video/mp4" />
-                                             Your browser does not support the video tag.
-                                          </video> // Display video if it's a URL
-                                       )}
-                                    </li>
-                                 ))}
-                              </ul>
-                           ) : (
-                              <p>No content available for this course.</p>
-                           )}
-                        </div>
-
-                        <div>
-                           <img src={course.imageURL} alt={course.title} className="w-full h-48 object-cover mt-2" />
-                        </div>
-                     </li>
-                  ))}
-               </ul>
-            ) : (
-               <p>No courses available.</p>
-            )}
-         </div>
-
-         <div className="mt-6">
-            <h3 className="text-lg font-semibold">Settings</h3>
-            <p>Change Profile information here</p>
-         </div>
-
-         <button
-            onClick={handleLogout}
-            className="mt-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-         >
-            Logout
-         </button>
-      </div>
+      </>
    );
 }
 
