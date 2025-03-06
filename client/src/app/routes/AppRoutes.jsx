@@ -19,10 +19,10 @@ function AppRoutes() {
          <Route path="/" element={<Layout />}>
             <Route index element={<MainPG />} /> {/* Default route */}
             <Route path="/course/:courseId" element={<CoursePage />} />
-            <Route path="courses" element={<CoursePage />} />
+            {/* <Route path="courses" element={<CoursePage />} /> */}
             {/* Protected Routes */}
             <Route element={<ProtectedRoutes />}>
-               <Route path="dashboard" element={<PersonalDashboard />} />
+               <Route path="/dashboard" element={<PersonalDashboard />} />
             </Route>
          </Route>
 
