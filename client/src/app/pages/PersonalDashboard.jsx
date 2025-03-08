@@ -223,7 +223,7 @@ function PersonalDashboard() {
                      courseDescription={course.description}
                      courseImage={course.imageURL}
                      progress={100}
-                     reviewLink={`/course/${course.id}`}
+                     reviewLink={`/TurningConflitsIntoConnection`}
                      courseLabel={course.redHighlight}
                   />
                ))
