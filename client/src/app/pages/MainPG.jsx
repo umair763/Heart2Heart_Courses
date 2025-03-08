@@ -6,7 +6,7 @@ import courseImage from '../../assets/images/chamcham2person.avif';
 function MainPG() {
    const courses = [
       {
-         id: 'course-1',
+         id: 'course-id-1',
          title: 'Bringing Desires Back',
          imageUrl: courseImage,
          buttonLink: 'https://www.estherperel.com/courses/bringing-desires-back',
@@ -16,7 +16,7 @@ function MainPG() {
          li3: 'BASED ON 40+ YEARS OF EXPERIENCE',
       },
       {
-         id: 'course-2',
+         id: 'course-id-2',
          title: 'Turning Conflicts Into Connection',
          imageUrl: courseImage,
          buttonLink: 'https://www.estherperel.com/courses/turning-conflict-into-connection',
@@ -26,7 +26,7 @@ function MainPG() {
          li3: 'Improve conflicts with or without a partner.',
       },
       {
-         id: 'course-3',
+         id: 'course-id-3',
          title: 'Playing with Desires',
          imageUrl: courseImage,
          buttonLink: 'https://www.estherperel.com/courses/playing-with-desires',

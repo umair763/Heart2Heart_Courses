@@ -1,7 +1,20 @@
 // firebaseConfig.js
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js';
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js';
-import { getAuth, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js'; // Firebase Auth
+import {
+   getFirestore,
+   doc,
+   setDoc,
+   collection,
+   getDocs,
+   query,
+   orderBy,
+   limit, // Add this import to include 'limit'
+} from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js'; // Added limit here
+import {
+   getAuth,
+   setPersistence,
+   browserLocalPersistence,
+} from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js'; // Firebase Auth
 import { getStorage } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-storage.js';
 
 const firebaseConfig = {
@@ -23,9 +36,9 @@ const auth = getAuth(app);
 const storage = getStorage(app);
 
 // Set persistence to LOCAL (this ensures the user stays logged in)
-setPersistence(auth, browserLocalPersistence)
-   .catch((error) => {
-      console.error("Error setting auth persistence:", error);
-   });
+setPersistence(auth, browserLocalPersistence).catch((error) => {
+   console.error('Error setting auth persistence:', error);
+});
 
-export { db, auth, storage };
+// Export Firestore, Auth, Storage, doc, setDoc, collection, getDocs, query, orderBy, and limit functions
+export { db, auth, storage, doc, setDoc, collection, getDocs, query, orderBy, limit }; // Add 'limit' here

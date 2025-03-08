@@ -1,3 +1,4 @@
+import React, { useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 import courseImage from '../../assets/images/conficts.avif';
 import card1 from '../../assets/images/card1.avif';
@@ -8,22 +9,26 @@ import cardimg2 from '../../assets/images/cardimg2.avif';
 import cardimg3 from '../../assets/images/cardimg3.avif';
 import SlidingBarContainer from '../../components/SlidingBarContainer';
 import heroImage from '../../assets/images/Ali Haider standing2.jpg';
+import { doc, updateDoc } from 'firebase/firestore';
+import { db } from '../../firebase/firebaseConfig'; // Assuming this is correct
+import AuthContext from '../context/AuthContext';
 
 function CoursePage() {
    const { courseId } = useParams();
+   const { user, isAuthenticated } = useContext(AuthContext);
    const navigate = useNavigate();
 
    // Course Data (Static)
    const courses = [
       {
-         id: 'course-1',
+         id: 'course-id-1',
          title: 'Bringing Desires Back',
          description: 'Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck.',
          imageUrl: courseImage,
          price: 90,
       },
       {
-         id: 'course-2',
+         id: 'course-id-2',
          title: 'Turning Conflict Into Connection',
          description:
             'Uncover why you keep having the same fights over and over again. Learn how to break free from habitual patterns and responses. Find peace and reconciliation even when you disagree.',
@@ -31,7 +36,7 @@ function CoursePage() {
          price: 80,
       },
       {
-         id: 'course-3',
+         id: 'course-id-3',
          title: 'Playing with Desires',
          description:
             'Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck. Discover a new sense of hope and possibility.',
@@ -39,13 +44,33 @@ function CoursePage() {
          price: 100,
       },
    ];
-   // Handle enrollment and redirect to sign-in page
-   const handleEnroll = () => {
-      navigate('/signin');
-   };
 
    const course = courses.find((c) => c.id === courseId);
    if (!course) return <p className="text-center text-red-500">Course not found.</p>;
+
+   const handleEnroll = async () => {
+      if (!isAuthenticated || !user || !user.ManualUserID) {
+         // Save course ID to enroll after login
+         sessionStorage.setItem('pendingEnrollmentCourseId', course.id);
+         sessionStorage.setItem('redirectAfterLogin', window.location.pathname);
+         navigate('/signin');
+         return;
+      }
+
+      try {
+         const userRef = doc(db, 'users', user.ManualUserID);
+
+         // Use arrayUnion to add the course ID without duplicates
+         await updateDoc(userRef, {
+            coursesEnrolled: arrayUnion(course.id),
+         });
+
+         // Show success message or redirect
+         navigate('/dashboard');
+      } catch (err) {
+         console.error('Error enrolling user:', err);
+      }
+   };
 
    return (
       <>

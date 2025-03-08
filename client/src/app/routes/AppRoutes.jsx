@@ -26,12 +26,12 @@ function AppRoutes() {
             <Route path="/course/:courseId" element={<CoursePage />} />
             {/* <Route path="courses" element={<CoursePage />} /> */}
             {/* Protected Routes */}
+            <Route element={<ProtectedRoutes />}>
             <Route path="/coursecontent" element={<CourseContent />} />
             <Route path="/reviewmodules" element={<ReviewModules />} />
             <Route path="/review/:courseId" element={<CourseReview />} />
             <Route path="/TurningConflitsIntoConnection" element={<TurningConflitsIntoConnection />} />
             <Route path="/TurningConflitsIntoConnectionContent" element={<TurningConflitsIntoConnectionContent />} />
-            <Route element={<ProtectedRoutes />}>
                <Route path="/dashboard" element={<PersonalDashboard />} />
             </Route>
          </Route>

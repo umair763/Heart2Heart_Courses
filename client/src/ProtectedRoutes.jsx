@@ -10,27 +10,33 @@ function ProtectedRoutes() {
 
    // Double-check authentication on route change
    useEffect(() => {
-      // First check localStorage as a fast path
-      const storedUser = localStorage.getItem('user');
-      const storedAuth = localStorage.getItem('isAuthenticated');
-      
-      if (storedUser && storedAuth === 'true') {
-         setUser(JSON.parse(storedUser));
-         setIsAuthenticated(true);
-         setLocalLoading(false);
-      } else {
-         // Then verify with current Firebase auth state
-         const currentUser = auth.currentUser;
-         if (currentUser) {
-            setUser(currentUser);
-            setIsAuthenticated(true);
+      const checkAuthStatus = async () => {
+         // First check localStorage as a fast path
+         const storedUser = localStorage.getItem('user');
+         const storedAuth = localStorage.getItem('isAuthenticated');
+
+         if (storedUser && storedAuth === 'true') {
+            // Only update if needed
+            if (!isAuthenticated) setUser(JSON.parse(storedUser));
+            if (!isAuthenticated) setIsAuthenticated(true);
+            setLocalLoading(false);
          } else {
-            setIsAuthenticated(false);
-            setUser(null);
+            // Then verify with current Firebase auth state
+            const currentUser = auth.currentUser;
+            if (currentUser) {
+               // Only update if needed
+               if (!isAuthenticated) setUser(currentUser);
+               if (!isAuthenticated) setIsAuthenticated(true);
+            } else {
+               setIsAuthenticated(false);
+               setUser(null);
+            }
+            setLocalLoading(false);
          }
-         setLocalLoading(false);
-      }
-   }, [location, setIsAuthenticated, setUser]);
+      };
+
+      checkAuthStatus();
+   }, [location, isAuthenticated, setIsAuthenticated, setUser]);
 
    // Show loading indicator while checking auth state
    if (loading || localLoading) {
