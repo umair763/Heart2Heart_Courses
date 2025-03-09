@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '/src/assets/images/H2Hlogobrown.png';
-import { auth, db, doc, setDoc, collection, getDocs, query, orderBy, limit } from '../../../firebase/firebaseConfig'; // Firestore imports
+import { auth, db, doc, setDoc, collection, getDocs, query, orderBy, limit } from '../../../firebase/firebaseConfig';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import signupImage from '/src/assets/images/ALIHAIDERTHINK.jpeg';
 import moneyBackBg from '/src/assets/images/background.png';
@@ -13,15 +13,87 @@ const SignUp = () => {
    const [confirmPassword, setConfirmPassword] = useState('');
    const [step, setStep] = useState(1);
    const [participation, setParticipation] = useState('');
-   const [paymentMethod, setPaymentMethod] = useState('');
    const [error, setError] = useState('');
    const [loading, setLoading] = useState(false);
+   const [paypalButtonsRendered, setPaypalButtonsRendered] = useState(false);
+   const [transactionComplete, setTransactionComplete] = useState(false);
+   const [paymentDetails, setPaymentDetails] = useState(null);
 
    const navigate = useNavigate();
 
    // Get the redirect path and course ID from session storage if available
    const redirectPath = sessionStorage.getItem('redirectAfterLogin') || '/dashboard';
    const pendingEnrollmentCourseId = sessionStorage.getItem('pendingEnrollmentCourseId');
+
+   // PayPal configuration - using the credentials you provided
+   const PAYPAL_CLIENT_ID = 'Aa92oByRfkBI45XscQwo5ZdOkNdmI72m7bMz4T1h03i6OEfz__umyQf1G-Zgg2jaSDWcP2l3quKQx-Zy';
+   
+   useEffect(() => {
+     // Load PayPal SDK when reaching payment step
+     if (step === 3 && !paypalButtonsRendered) {
+       const script = document.createElement('script');
+       script.src = `https://www.paypal.com/sdk/js?client-id=${PAYPAL_CLIENT_ID}&currency=USD`;
+       script.async = true;
+       script.onload = () => initializePayPalButtons();
+       document.body.appendChild(script);
+       
+       return () => {
+         if (document.body.contains(script)) {
+           document.body.removeChild(script);
+         }
+       };
+     }
+   }, [step, paypalButtonsRendered]);
+
+   const initializePayPalButtons = () => {
+     if (window.paypal && !paypalButtonsRendered) {
+       try {
+         window.paypal.Buttons({
+           style: {
+             layout: 'vertical',
+             color: 'blue',
+             shape: 'rect',
+             label: 'pay'
+           },
+           createOrder: (data, actions) => {
+             // Set up the transaction details
+             return actions.order.create({
+               purchase_units: [{
+                 amount: {
+                   value: '97.00' // Set your course price here
+                 },
+                 description: 'Heart2Heart Relationship Course',
+                 payee: {
+                   email_address: 'msybashir@gmail.com' // Merchant email address
+                 }
+               }]
+             });
+           },
+           onApprove: (data, actions) => {
+             return actions.order.capture().then(function(details) {
+               console.log('Transaction completed by ' + details.payer.name.given_name);
+               setPaymentDetails(details);
+               setTransactionComplete(true);
+               
+               // Automatically proceed with account creation after successful payment
+               setTimeout(() => {
+                 handleSignUp(new Event('submit'));
+               }, 1000);
+             });
+           },
+           onError: (err) => {
+             setError('Payment failed. Please try again.');
+             console.error('PayPal Error:', err);
+           }
+         }).render('#paypal-button-container');
+         
+         setPaypalButtonsRendered(true);
+       } catch (error) {
+         console.error("Error rendering PayPal buttons:", error);
+         setError("Failed to initialize payment system. Please refresh the page and try again.");
+       }
+     }
+   };
 
    const handleNext = () => {
       if (step === 1) {
@@ -43,10 +115,11 @@ const SignUp = () => {
    };
 
    const handleSignUp = async (e) => {
-      e.preventDefault();
+      if (e) e.preventDefault();
       setError('');
-      if (!paymentMethod) {
-         setError('Please select a payment method.');
+      
+      if (!transactionComplete) {
+         setError('Please complete the payment process before continuing.');
          return;
       }
 
@@ -87,7 +160,15 @@ const SignUp = () => {
             username: username,
             coursesEnrolled: initialCourses,
             participationMode: participation,
-            paymentMethod: paymentMethod,
+            paymentMethod: 'paypal',
+            paymentDetails: paymentDetails ? {
+              transactionId: paymentDetails.id,
+              payerEmail: paymentDetails.payer.email_address,
+              amount: paymentDetails.purchase_units[0].amount.value,
+              currency: paymentDetails.purchase_units[0].amount.currency_code,
+              status: paymentDetails.status,
+              createTime: paymentDetails.create_time
+            } : null,
             createdAt: new Date(),
          });
 
@@ -98,7 +179,7 @@ const SignUp = () => {
          sessionStorage.removeItem('redirectAfterLogin');
 
          // Redirect to either dashboard or the path stored in session
-         navigate(pendingEnrollmentCourseId ? redirectPath : '/signin');
+         navigate(pendingEnrollmentCourseId ? redirectPath : '/dashboard');
       } catch (error) {
          setError(error.message); // Display Firebase error message
          console.error('Error creating user:', error);
@@ -194,31 +275,39 @@ const SignUp = () => {
             )}
 
             {step === 3 && (
-               <form className="w-full mt-4 space-y-3 flex flex-col items-center">
+               <div className="w-full mt-4 space-y-3 flex flex-col items-center">
                   <h3 className="text-lg font-semibold text-[#92553D] text-center">
-                     Select Payment Method (Coming Soon)
+                     Complete Payment to Create Your Account
                   </h3>
-                  <select
-                     className="w-full p-3 border rounded-lg focus:outline-[#92553D]"
-                     value={paymentMethod}
-                     onChange={(e) => setPaymentMethod(e.target.value)}
-                  >
-                     <option value="" disabled>
-                        Select a payment method
-                     </option>
-                     <option value="credit_card">Credit Card</option>
-                     <option value="paypal">PayPal</option>
-                     <option value="bank_transfer">Bank Transfer</option>
-                  </select>
-                  <button
-                     type="submit"
-                     disabled={loading}
-                     className="w-full bg-blue-600 hover:bg-[#6b4226] text-white font-semibold py-3 rounded-full"
-                     onClick={handleSignUp}
-                  >
-                     {loading ? 'Signing Up...' : 'SIGN UP'}
-                  </button>
-               </form>
+                  
+                  <div className="w-full mt-4 mb-4">
+                    <div className="text-center mb-6 p-4 bg-[#fef2e6] rounded-lg border border-[#92553D]">
+                      <p className="font-medium text-lg text-[#92553D]">Heart2Heart Relationship Course</p>
+                      <p className="text-3xl font-bold text-[#92553D] my-2">$97.00</p>
+                      <p className="text-sm text-gray-600">One-time payment with 30-day money-back guarantee</p>
+                    </div>
+                    
+                    {transactionComplete ? (
+                      <div className="p-4 bg-green-100 border border-green-300 rounded-lg text-center mb-4">
+                        <svg className="w-8 h-8 text-green-500 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <p className="text-green-700 font-medium">Payment successfully completed!</p>
+                        <p className="text-sm text-green-600">Transaction ID: {paymentDetails?.id}</p>
+                        <p className="text-sm text-gray-600 mt-2">Creating your account...</p>
+                      </div>
+                    ) : (
+                      <div className="mb-4">
+                        <p className="text-center text-gray-600 mb-3">Complete your payment with PayPal:</p>
+                        <div id="paypal-button-container" className="w-full"></div>
+                      </div>
+                    )}
+                    
+                    <div className="mt-6 text-center text-sm text-gray-500">
+                      <p>By completing payment, you agree to our <span className="text-blue-600 cursor-pointer">Terms of Service</span> and <span className="text-blue-600 cursor-pointer">Privacy Policy</span>.</p>
+                    </div>
+                  </div>
+               </div>
             )}
 
             <button className="mt-4 text-gray-600" onClick={() => navigate('/signin')}>
@@ -238,7 +327,7 @@ const SignUp = () => {
             </h3>
             <p className="text-gray-600 mt-3 text-sm leading-relaxed text-center">
                This course was created with usefulness in mind. If you watch the videos, do the exercises, and find that
-               you haven’t gained any useful insights that improve your relationship, we offer a 30-day money-back
+               you haven't gained any useful insights that improve your relationship, we offer a 30-day money-back
                guarantee.
             </p>
          </div>

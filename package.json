@@ -18,6 +18,9 @@
   "homepage": "https://github.com/umair763/Heart2Heart_Courses#readme",
   "description": "",
   "dependencies": {
-    "firebase": "^11.4.0"
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "firebase": "^11.4.0",
+    "mssql": "^11.0.1"
   }
 }
