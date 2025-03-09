@@ -14,7 +14,7 @@ const Header2 = () => {
    };
 
    return (
-      <header className="w-full text-[#120A16] shadow-sm mt-2">
+      <header className="w-full text-white bg-[#120A16] shadow-sm pt-3">
          <div className="max-w-[1200px] mx-auto px-4">
             {/* Mobile Menu Overlay */}
             {isMenuOpen && <div className="fixed inset-0 bg-[#d2874d] z-40 md:hidden" onClick={closeMenu} />}

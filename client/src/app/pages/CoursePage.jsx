@@ -340,15 +340,15 @@ function CoursePage() {
                   that you haven’t gained useful insights that improve your relationship, we offer a 30-day money-back
                   guarantee.
                </p>
-               <div className="absolute top-8 right-8 md:top-16 md:right-16">
+               {/* <div className="absolute top-8 right-8 md:top-16 md:right-16">
                   <img
-                     alt="Circular badge with text 'EP' in the center and '30 Day Guarantee' around the edge"
+                     alt="Circular badge with text  in the center and '30 Day Guarantee' around the edge"
                      className="rounded-full"
                      height="100"
                      src="https://storage.googleapis.com/a1aa/image/67j97go1FTv4TIvpgwX5k9_HiFnXh_HWswJmAjlkYeg.jpg"
                      width="100"
                   />
-               </div>
+               </div> */}
             </div>
          </div>
       </>

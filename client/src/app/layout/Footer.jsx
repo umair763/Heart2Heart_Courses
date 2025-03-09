@@ -25,9 +25,9 @@ function Footer() {
                      <Link to="/" className="block text-gray-300 hover:text-white transition-colors">
                         Courses
                      </Link>
-                     <Link to="/about" className="block text-gray-300 hover:text-white transition-colors">
+                     {/* <Link to="/about" className="block text-gray-300 hover:text-white transition-colors">
                         About Us
-                     </Link>
+                     </Link> */}
                      {/* <Link to="/contact" className="block text-gray-300 hover:text-white transition-colors">
                         Contact
                      </Link> */}

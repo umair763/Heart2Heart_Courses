@@ -11,6 +11,7 @@ import {
    where,
 } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js';
 import PurchasedCourseCard from '../../components/common/PurchasedCourseCard';
+import { FiLogOut } from 'react-icons/fi'; // Import logout icon from react-icons
 
 function PersonalDashboard() {
    const navigate = useNavigate();
@@ -203,15 +204,45 @@ function PersonalDashboard() {
 
    return (
       <>
-         <div className="flex items-center justify-center p-6">
-            <div className="text-center">
-               <h2 className="text-3xl font-bold text-[#8a552d]">Dashboard</h2>
-               <p className="mt-2 text-lg text-gray-700">Welcome, {user?.email ? user.email : 'Guest'}!</p>
+         {/* <div className="flex p-6 max-w-6xl mx-auto">
+            <div className="text-left">
+               <h2 className="text-3xl font-bold font-serif text-[#120A16]">Dashboard</h2>
+               <h1 className="text-3xl font-bold text-[#120A16]">
+                  Welcome, {user?.displayName || user?.email.split('@')[0] || 'Guest'}!
+               </h1>
+            </div>
+         </div> */}
+         <div className="flex flex-col mt-4 p-6 max-w-6xl mx-auto bg-[#ffffff6e] rounded-lg shadow-lg">
+            <div className="text-left  w-full flex flex-col sm:flex-row md:flex-row lg:flex-row">
+               {/* Title and Logout Button */}
+               <div className="items-start mb-4 ">
+                  {/* Dashboard Title */}
+                  <h2 className="text-3xl font-bold font-serif text-[#120A16] mb-4">Dashboard</h2>
+
+                  {/* Welcome Message */}
+                  <p className="text-lg text-gray-700">
+                     Welcome,{' '}
+                     <span className="font-semibold text-[#2B6CB0]">
+                        {user?.displayName || user?.email.split('@')[0] || 'Guest'}
+                     </span>
+                     !
+                  </p>
+               </div>
+
+               {/* Logout Button */}
+               <div className="ml-auto">
+                  <button
+                     onClick={handleLogout}
+                     className="hover:cursor-pointer flex items-center text-gray-500 hover:text-gray-700 font-semibold py-2 px-4 rounded-lg mt-4 transition-all duration-300"
+                  >
+                     <FiLogOut className="mr-2" /> Logout
+                  </button>
+               </div>
             </div>
          </div>
 
-         <div className="p-6 bg-[#c59c7cb0] rounded-lg shadow-lg max-w-6xl mx-auto">
-            <h1 className="text-4xl font-serif font-bold text-[#120A16] mb-6">Your Library</h1>
+         <div className="p-6 max-w-6xl mx-auto">
+            <h1 className="text-4xl mt-6 font-serif font-bold text-[#120A16] mb-6">Your Library</h1>
 
             {/* Purchased Course Cards */}
             {purchasedCourses.length > 0 ? (
@@ -234,13 +265,13 @@ function PersonalDashboard() {
             <h2 className="text-2xl font-bold text-[#120A16] mt-8">More Courses Available</h2>
 
             {/* Regular Course Grid (Left-aligned) */}
-            <div className="grid md:grid-cols-3 gap-6 mt-6">
+            <div className="grid md:grid-cols-3 gap-6 mt-6 mb-6">
                {courses.length > 0 ? (
                   courses.map((course) => (
                      <div
                         key={course.id}
                         className="p-4 border rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300"
-                        onClick={() => navigate(`/course/${course.id}`)}
+                        onClick={() => navigate('/course/course-id-3')}
                         style={{ cursor: 'pointer' }}
                      >
                         <img src={course.imageURL} alt={course.title} className="w-full h-48 object-cover rounded-lg" />
@@ -258,12 +289,12 @@ function PersonalDashboard() {
             {/* Second Course Grid (Centered) - Removed to avoid duplication */}
 
             {/* Logout Button */}
-            <button
+            {/* <button
                onClick={handleLogout}
                className="mt-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg mx-auto block transition-all duration-300"
             >
                Logout
-            </button>
+            </button> */}
          </div>
       </>
    );
