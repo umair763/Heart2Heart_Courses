@@ -60,7 +60,7 @@ const SignUp = () => {
              return actions.order.create({
                purchase_units: [{
                  amount: {
-                   value: '97.00' // Set your course price here
+                   value: '0.01' // Set your course price here
                  },
                  description: 'Heart2Heart Relationship Course',
                  payee: {
@@ -283,7 +283,7 @@ const SignUp = () => {
                   <div className="w-full mt-4 mb-4">
                     <div className="text-center mb-6 p-4 bg-[#fef2e6] rounded-lg border border-[#92553D]">
                       <p className="font-medium text-lg text-[#92553D]">Heart2Heart Relationship Course</p>
-                      <p className="text-3xl font-bold text-[#92553D] my-2">$97.00</p>
+                      <p className="text-3xl font-bold text-[#92553D] my-2">$0.01</p>
                       <p className="text-sm text-gray-600">One-time payment with 30-day money-back guarantee</p>
                     </div>
                     

@@ -14,7 +14,7 @@ const Header2 = () => {
    };
 
    return (
-      <header className="w-full text-white bg-[#120A16] shadow-sm pt-3">
+      <header className="w-full text-white bg-[#120A16] shadow-sm pt-3 text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold">
          <div className="max-w-[1200px] mx-auto px-4">
             {/* Mobile Menu Overlay */}
             {isMenuOpen && <div className="fixed inset-0 bg-[#d2874d] z-40 md:hidden" onClick={closeMenu} />}
@@ -30,8 +30,8 @@ const Header2 = () => {
                   bg-[#b58d6eb0]
                `}
             >
-               <div className="flex justify-between p-6 text-[#8a552d]  ">
-                  <Link to="/" className=" text-2xl font-bold " onClick={closeMenu}>
+               <div className="flex justify-between p-6 text-[#8a552d]">
+                  <Link to="/" className="text-2xl font-bold header-name" onClick={closeMenu}>
                      Syed Ali Haider
                   </Link>
 
@@ -56,7 +56,7 @@ const Header2 = () => {
             {/* Desktop Navigation */}
             <div className="flex items-center justify-between py-4">
                {/* Logo */}
-               <Link to="/" className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold">
+               <Link to="/" className="font-bold header-name">
                   Syed Ali Haider
                </Link>
 
@@ -77,7 +77,15 @@ const Header2 = () => {
             </div>
          </div>
          <div className="ml-4 w-[95%] line-height bg-[#8a552d] mt-2 "></div>
-         <style>{`.line-height { height: 1px; }`}</style>{' '}
+         <style>
+            {`
+               .line-height { height: 1px; }
+               .header-name {
+                  font-family: 'YourPreferredFont', sans-serif; /* Add your desired font family here */
+                  font-size: 1.5rem; /* Adjust the font size as needed */
+               }
+            `}
+         </style>
       </header>
    );
 };
