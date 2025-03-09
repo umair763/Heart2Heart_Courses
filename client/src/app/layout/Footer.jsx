@@ -79,7 +79,7 @@ function Footer() {
                            <Twitter size={24} />
                         </a> */}
                         <a
-                           href="https://instagram.com"
+                           href="https://www.instagram.com/syed.ali.haider5/"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="text-gray-300 hover:text-white transition-colors"

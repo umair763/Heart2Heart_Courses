@@ -46,7 +46,7 @@ function MainPG() {
                <div className="w-full min--screen flex flex-col sm:flex-row lg:flex-row md:flex-row items-center justify-center">
                   {/* Left Column - Text Content */}
                   <div className="w-full md:w-1/2 text-left flex flex-col justify-center mb-8 md:mb-0 md:pr-8 p-3 sm:p-5 md:p-6">
-                     <h1 className="text-3xl font-serif md:text-4xl lg:text-5xl font-bold mb-4 text-[#8a552d] leading-tight">
+                     <h1 className="text-3xl font-serif md:text-4xl lg:text-5xl font-bold mb-4 text-[#120A16] leading-tight">
                         Learn from Syed Ali Haider
                      </h1>
                      <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
@@ -67,7 +67,7 @@ function MainPG() {
             </div>
 
             {/* Courses Section */}
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 mt-6 ml-15 font-serif text-[#8a552d]">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 mt-6 ml-15 font-serif text-[#120A16]">
                Explore all courses
             </h1>
 
@@ -88,7 +88,7 @@ function MainPG() {
             </div>
 
             {/* Testimonial Section */}
-            <h1 className="text-3xl md:text-4xl font-bold text-center mx-auto mt-28 w-1/2 text-[#8a552d]">
+            <h1 className="text-3xl md:text-4xl font-bold text-center mx-auto mt-28 w-1/2 text-[#120A16]">
                Supporting hundreds of thousands in building strong and empowered relationships.
             </h1>
 
