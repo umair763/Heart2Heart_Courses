@@ -12,30 +12,31 @@ function TurningConflitsIntoConnection() {
    const modules = [
       {
          id: 0,
-         title: 'Shall We Begin?',
+         title: 'Let’s Get Started!',
          imageUrl: 'https://storage.googleapis.com/a1aa/image/wDk5JPUjr5ZAuuUdDFRoZAGMVYmko8Cb5HKubdKcqao.jpg',
       },
       {
          id: 1,
-         title: 'The Choreography Of Conflict: How Conflict Manifests',
+         title: 'Understanding the Dance of Conflict: How Conflict Shows Up',
          imageUrl: 'https://storage.googleapis.com/a1aa/image/BOW-JJkpstMvpuytLsSqhMpQhHNpZ-ihAGKSuid08Mo.jpg',
       },
       {
          id: 2,
-         title: "The Real Reasons You're In Conflict",
+         title: 'What’s Really Behind Your Conflict',
          imageUrl: 'https://storage.googleapis.com/a1aa/image/VbVrcw66vCaFy5ROLo2204gsVwap6Md_frbeaph52tE.jpg',
       },
       {
          id: 3,
-         title: 'Creating New Opportunities In Conflict',
+         title: 'Turning Conflict Into Opportunity',
          imageUrl: 'https://storage.googleapis.com/a1aa/image/UqqDiGiRp3HVENuFxWnqoX9auzCiqD87dHCVN8KwXiA.jpg',
       },
       {
          id: 4,
-         title: 'How To Reconcile and Repair',
+         title: 'How To Heal and Reconcile',
          imageUrl: 'https://storage.googleapis.com/a1aa/image/fdK471Ok_xq386fz0lubT-sXRxwnHJMhCBeTjt6av6s.jpg',
       },
    ];
+
    return (
       <>
          <div className="bg-gradient-to-r from-pink-300 to-red-400 text-white py-12">
@@ -45,7 +46,7 @@ function TurningConflitsIntoConnection() {
                      CONFLICT RESOLUTION
                   </div>
                   <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-md">
-                     Turning Conflict Into Connection
+                     Transforming Disagreements into Harmony
                   </h1>
                   <button
                      onClick={() => navigate(`/TurningConflitsIntoConnectionContent`)}
@@ -72,11 +73,11 @@ function TurningConflitsIntoConnection() {
                <div className="flex-1 gap-6 lg:w-3/4">
                   {/* First Card: Turning Conflict Into Connection */}
                   <div className="flex-1 bg-white p-6 rounded-xl mb-5">
-                     <h2 className="text-2xl font-bold mb-2">Turning Conflict Into Connection</h2>
+                     <h2 className="text-2xl font-bold mb-2">Transforming Disagreements into Harmony</h2>
                      <p className="text-gray-700 mb-4">
-                        What happens when you and a partner are in disagreement? Does it bring you closer together or
-                        further apart? In this self-paced course you'll learn what really causes fighting and
-                        disconnection, and how to reconcile in the long-term.
+                        What happens when you and your partner disagree? Does it bring you closer or push you further
+                        apart? In this self-paced course, you'll discover the true causes of conflict and disconnection,
+                        and learn how to achieve lasting reconciliation.
                      </p>
                      <p className="text-gray-700 mb-2">10 of 11 Lessons Completed</p>
                      <div className="w-full bg-gray-300 rounded-full h-2 mb-4">

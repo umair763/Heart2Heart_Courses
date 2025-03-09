@@ -22,24 +22,25 @@ function CoursePage() {
    const courses = [
       {
          id: 'course-id-1',
-         title: 'Bringing Desires Back',
-         description: 'Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck.',
+         title: 'Reigniting Desire',
+         description:
+            'Explore the obstacles preventing desire. Discover how to reconnect with pleasure and break free from stagnation.',
          imageUrl: courseImage,
          price: 90,
       },
       {
          id: 'course-id-2',
-         title: 'Turning Conflict Into Connection',
+         title: 'Transforming Disagreements into Harmony',
          description:
-            'Uncover why you keep having the same fights over and over again. Learn how to break free from habitual patterns and responses. Find peace and reconciliation even when you disagree.',
+            'Understand why you keep encountering the same conflicts. Learn to escape repetitive patterns and reactions. Achieve peace and resolution, even in times of disagreement.',
          imageUrl: courseImage,
          price: 80,
       },
       {
          id: 'course-id-3',
-         title: 'Playing with Desires',
+         title: 'Exploring and Reawakening Desire',
          description:
-            'Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck. Discover a new sense of hope and possibility.',
+            'Identify the barriers to desire. Reconnect with pleasure and break free from limitations. Embrace a renewed sense of hope and possibility.',
          imageUrl: courseImage,
          price: 100,
       },
@@ -85,13 +86,17 @@ function CoursePage() {
                {/* Features List */}
                <ul className="mt-6 space-y-2 text-gray-900">
                   <li className="flex items-center">
-                     ⏳ <span className="ml-2 font-semibold">Gain new insights in just one hour.</span>
+                     ⏳ <span className="ml-2 font-semibold">Discover valuable insights in just one hour.</span>
                   </li>
                   <li className="flex items-center">
-                     📄 <span className="ml-2 font-semibold">Downloadable workbook with exercises.</span>
+                     📄{' '}
+                     <span className="ml-2 font-semibold">
+                        Access a downloadable workbook with actionable exercises.
+                     </span>
                   </li>
                   <li className="flex items-center">
-                     🔄 <span className="ml-2 font-semibold">Improve conflicts with or without a partner.</span>
+                     🔄{' '}
+                     <span className="ml-2 font-semibold">Enhance conflict resolution, with or without a partner.</span>
                   </li>
                </ul>
 
@@ -125,13 +130,14 @@ function CoursePage() {
                <div className="flex flex-col md:flex-row">
                   <div className="md:w-1/2 pr-4">
                      <h1 className="heading  text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E1A47] leading-tight mb-4">
-                        Desire comes and goes. Learn how to reignite the spark no matter where you're starting from.
+                        Desire fluctuates. Discover how to reignite the passion, no matter where you begin.
                      </h1>
                   </div>
                   <div className="md:w-1/2">
                      <p className="text-lg text-gray-700">
-                        There is no “normal” when it comes to sexuality. This course will help you understand your
-                        unique relationship with desire and develop a personal approach to fostering more of it.
+                        There is no one-size-fits-all when it comes to sexuality. This course will guide you in
+                        understanding your personal connection with desire and creating an individualized approach to
+                        nurturing more of it.
                      </p>
                   </div>
                </div>
@@ -160,11 +166,11 @@ function CoursePage() {
                         src={card1}
                         width="200"
                      />
-                     <h2 className="text-2xl font-bold mb-4 font-serif">Understand Your Erotic Blocks</h2>
+                     <h2 className="text-2xl font-bold mb-4 font-serif">Identify Your Erotic Barriers</h2>
                      <p className="text-gray-700 ">
-                        Whether you’re stressed, struggling with deeply ingrained stories and stereotypes, or simply
-                        unsure about what you enjoy, there’s a reason desire is so hard to access. Start uncovering why
-                        you’re blocked.
+                        Whether you're feeling stressed, dealing with long-held beliefs and stereotypes, or uncertain
+                        about your own desires, there's a reason why accessing pleasure can be challenging. Begin
+                        exploring what's holding you back.
                      </p>
                   </div>
                   <div className="bg-gray-200 p-6 rounded-lg shadow-lg border-gray-600 border-1">
@@ -175,10 +181,11 @@ function CoursePage() {
                         src={card2}
                         width="200"
                      />
-                     <h2 className="text-2xl font-bold mb-4 font-serif">Build Positive Sexual Candor</h2>
+                     <h2 className="text-2xl font-bold mb-4 font-serif">Foster Healthy Sexual Communication</h2>
                      <p className="text-gray-700">
-                        Change comes when our conversations about desire are more kind than critical. Discover the art
-                        of sexual candor, plus scripts to help you practice asking for more of what you want.
+                        True change happens when we approach conversations about desire with kindness, not criticism.
+                        Learn the art of sexual candor, along with practical scripts to help you confidently ask for
+                        more of what you desire.
                      </p>
                   </div>
                   <div className="bg-gray-200 p-6 rounded-lg shadow-lg border-gray-600 border-1">
@@ -189,10 +196,10 @@ function CoursePage() {
                         src={card3}
                         width="200"
                      />
-                     <h2 className="text-2xl font-bold mb-4  font-serif">Create Space for Erotic Possibility</h2>
+                     <h2 className="text-2xl font-bold mb-4  font-serif">Make Room for Erotic Exploration</h2>
                      <p className="text-gray-700">
-                        Pleasure doesn’t do well under pressure. Use your newfound knowledge to break out of mundane
-                        routines and invite the vibrancy of erotic play back into your life.
+                        Pleasure thrives when there's no pressure. Use your new insights to break free from dull
+                        routines and welcome the excitement of erotic play back into your life.
                      </p>
                   </div>
                </div>
@@ -211,9 +218,10 @@ function CoursePage() {
                            Taught by Syed Ali Haider
                         </h1>
                         <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                           Syed Ali Haider has helped millions improve their lives and relationships. Now, she's
-                           offering a new way for you to gain access to her thoughtful and unique perspective. Her
-                           self-paced courses will spark new insights and help you improve your relational intelligence.
+                           Sayed Ali Haider has empowered countless individuals to enhance their lives and
+                           relationships. Now, she presents an exciting opportunity for you to explore her insightful
+                           and distinct perspective. Through his self-paced courses, you'll gain valuable insights and
+                           elevate your relational intelligence.
                         </p>
 
                         {/* Optional Call to Action Button */}
@@ -242,7 +250,9 @@ function CoursePage() {
          <div className="flex items-center justify-center mt-28 mb-28">
             <div className="text-center">
                <h1 className="text-4xl font-bold text-[#2b1e70]">In a format that works</h1>
-               <p className="text-lg text-[#2b1e70] mt-2">Perfect for bringing desire back into date night.</p>
+               <p className="text-lg text-[#2b1e70] mt-2">
+                  Just what you need to reignite the spark and make date night unforgettable!
+               </p>
                <div className="flex flex-wrap justify-center mt-6 space-x-4">
                   <div className="flex items-center space-x-2">
                      <i className="fas fa-play text-[#2b1e70]"></i>
@@ -270,7 +280,7 @@ function CoursePage() {
                <div className="text-center md:text-left mb-12">
                   <h2 className="text-sm font-semibold text-[#1a1a1a] mb-6">WHY IT WORKS</h2>
                   <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#1a1a1a] leading-tight">
-                     Syed Ali Haider helps you understand, embrace, and reignite your desire.
+                     Syed Ali Haider guides you to understand, embrace, and reignite your desire.
                   </h1>
                </div>
                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -281,11 +291,11 @@ function CoursePage() {
                         className="mx-auto mb-6"
                      />
                      <h3 className="text-2xl font-semibold font-serif text-[#1a1a1a] mb-4">
-                        Holds Space For Your Unique Sexual History
+                        Creates a Safe Space for Your Personal Sexual Journey
                      </h3>
                      <p className="text-[#1a1a1a]">
-                        Discover lessons, invitations for self-reflection, and exercises that shed light on your unique
-                        blocks and desires.
+                        Explore lessons, self-reflection prompts, and exercises that reveal your personal blocks and
+                        desires.
                      </p>
                   </div>
                   <div className="bg-[#f5ebe4] p-8 rounded-lg">
@@ -295,10 +305,10 @@ function CoursePage() {
                         className="mx-auto mb-6"
                      />
                      <h3 className="text-2xl font-semibold text-[#1a1a1a] font-serif mb-4">
-                        Focused On What You Can Control
+                        Centered Around What You Can Influence.
                      </h3>
                      <p className="text-[#1a1a1a]">
-                        Learn insights, skills, and customizable scripts you can use to engage in new erotic
+                        Gain valuable insights, skills, and personalized scripts to help you explore new erotic
                         experiences.
                      </p>
                   </div>
@@ -309,11 +319,11 @@ function CoursePage() {
                         className="mx-auto mb-6"
                      />
                      <h3 className="text-2xl font-semibold text-[#1a1a1a] font-serif mb-4">
-                        Designed To Meet You Where You Are
+                        Crafted to Support You at Your Current Stage
                      </h3>
                      <p className="text-[#1a1a1a]">
-                        No matter where you are in your journey with desire, you’ll find plenty of examples and ideas to
-                        guide your next step toward a more vibrant erotic life.
+                        Wherever you are on your journey with desire, you'll discover numerous examples and ideas to
+                        inspire your next step toward a more vibrant erotic life.
                      </p>
                   </div>
                </div>
@@ -321,7 +331,7 @@ function CoursePage() {
          </div>
 
          <h1 className="text-3xl md:text-4xl font-bold text-center mx-auto mt-28 w-1/2 text-[#8a552d]">
-            Helping hundreds of thousands of people create empowered relationships
+            Supporting hundreds of thousands in building strong and empowered relationships.
          </h1>
 
          <div className="my-28 ml-6 mr-6">
@@ -333,12 +343,12 @@ function CoursePage() {
             <div className="bg-[#0b0b5a] text-white rounded-lg p-8 md:p-16 max-w-4xl mx-auto text-center relative">
                <h2 className="text-sm uppercase tracking-widest mb-4">Syed Ali Haider's Guarantee</h2>
                <h1 className="text-3xl md:text-5xl font-bold mb-6">
-                  If this doesn't improve your relationship, get your money back.
+                  If this doesn’t strengthen your relationship, we’ll give you your money back.
                </h1>
                <p className="text-base md:text-lg">
-                  This course was created with usefulness in mind. If you watch the videos, do the exercises, and find
-                  that you haven’t gained useful insights that improve your relationship, we offer a 30-day money-back
-                  guarantee.
+                  This course was designed to be truly valuable. If you watch the videos, complete the exercises, and
+                  feel that you haven't gained meaningful insights to improve your relationship, we offer a 30-day
+                  money-back guarantee.
                </p>
                {/* <div className="absolute top-8 right-8 md:top-16 md:right-16">
                   <img

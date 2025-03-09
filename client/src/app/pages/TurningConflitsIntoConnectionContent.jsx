@@ -45,7 +45,7 @@ function TurningConflitsIntoConnectionContent() {
                      <ul class="flex list-none p-0 space-x-1">
                         <li>
                            <a href="/TurningConflitsIntoConnection" class="text-gray-600 hover:underline">
-                              Turning conflicts into connection
+                              Transforming Disagreements into Harmony
                            </a>
                         </li>
                         <li>
@@ -100,28 +100,29 @@ function TurningConflitsIntoConnectionContent() {
                                  <div class="bg-white text-gray-900 font-sans">
                                     <div class="max-w-2xl pl-3 ">
                                        <h1 class="text-2xl font-bold mb-5 -ml-6 font-serif">
-                                          Module o: Shall We Begin?
+                                          Module o: Let’s Get Started!
                                        </h1>
                                        <h1 class="mb-4 -ml-6 font-bold">Welcome</h1>
                                        <p class="mb-4 -ml-6 font-bold">
-                                          I’m so glad you’re joining me for this course, Turning Conflict Into
-                                          Connection.
+                                          I’m thrilled to have you with me on this journey in the course, Turning
+                                          Conflict Into Connection.
                                        </p>
                                        <p class="mb-4 -ml-6 ">
-                                          Before you begin, I highly recommend taking a moment to take a clear and
-                                          honest assessment of where you’re starting from. This is optional, but will
-                                          help you identify areas of improvement throughout your work in this course.
+                                          Before diving in, I suggest taking a moment to honestly assess where you’re
+                                          beginning. While this step is optional, it’ll give you a clearer view of areas
+                                          where you can grow and improve throughout the course.
                                        </p>
-                                       <p class="mb-4 mt-6 -ml-6 ">It will also help you reflect on:</p>
+                                       <p class="mb-4 mt-6 -ml-6 ">
+                                          This reflection will also guide you in considering:
+                                       </p>
                                        <ul class="list-disc pl-5 space-y-4">
-                                          <li>What’s working well?</li>
+                                          <li>What’s already going well?</li>
                                           <li>
-                                             What are you hoping will happen if you change your relationship to
-                                             conflict?
+                                             What changes do you hope to see by shifting your approach to conflict?
                                           </li>
                                           <li>
-                                             What is it that you know you can personally work on and improve during
-                                             conflicts?
+                                             What are the personal areas you feel you can work on to handle conflicts
+                                             better?
                                           </li>
                                        </ul>
                                     </div>
@@ -159,48 +160,48 @@ function TurningConflitsIntoConnectionContent() {
                                  <div class="bg-white text-gray-900 font-sans">
                                     <div class="max-w-2xl pl-3 ">
                                        <h1 class="text-2xl font-bold mb-5 -ml-6 font-serif">
-                                          Module o: Shall We Begin?
+                                          Module o: Let’s Get Started!
                                        </h1>
-                                       <h1 class="text-lg font-bold mb-4 -ml-6">Navigating this course.</h1>
+                                       <h1 class="text-lg font-bold mb-4 -ml-6">Navigating Through This Course.</h1>
                                        <ul class="list-disc pl-5 space-y-5 ">
                                           <li>
-                                             Download your course workbook. This is where you’ll keep track of all your
-                                             self-reflection resources and exercises.
+                                             Start by downloading your course workbook. This is where you’ll keep track
+                                             of your self-reflection, exercises, and key insights.
                                           </li>
                                           <li>
-                                             Each lesson builds upon the previous one. We recommend focusing on one
-                                             module, and then completing the related exercises in the workbook before
-                                             moving on.
+                                             Each lesson builds on the previous one, so we recommend focusing on one
+                                             module at a time. Complete the related exercises in your workbook before
+                                             moving on to the next lesson.
                                           </li>
                                           <li>
-                                             If you’re taking this course with someone else:
+                                             If you’re taking this course with a partner:
                                              <ul class="list-disc pl-6 space-y-2 mt-2">
                                                 <li>
-                                                   Find time to process the content alone, separate from one another.
-                                                   We’ll provide resources along the way to help you do this.
+                                                   make some time to process the content individually, away from one
+                                                   another. We’ll provide resources to guide you in this process.
                                                 </li>
                                                 <li>
-                                                   Find time to come together to share what you’ve learned and to
-                                                   complete the exercises together.
+                                                   Come together to share your insights and complete the exercises
+                                                   together.
                                                 </li>
                                                 <li>
-                                                   It’s helpful if you both download the workbook, and each complete
-                                                   your own version.
+                                                   It’s a good idea for both of you to download the workbook and fill
+                                                   out your own versions.
                                                 </li>
                                              </ul>
                                           </li>
                                           <li>
-                                             If you’re taking this on your own:
+                                             If you’re taking this course solo:
                                              <ul class="list-disc pl-6 space-y-2 mt-2">
                                                 <li>
-                                                   You can’t control what your partner does, but you can control how you
-                                                   react to what they do. You’ll look at what you can change with or
-                                                   without your partner.
+                                                   While you can’t control your partner’s actions, you have the power to
+                                                   change how you respond. This course will help you identify areas you
+                                                   can adjust, whether you’re on your own or with a partner..
                                                 </li>
                                                 <li>
-                                                   The cycle of conflict is a set of interlocking patterns. Changing
-                                                   your own patterns is the best way to change the pattern of your
-                                                   conflicts.
+                                                   Remember, the cycle of conflict is made up of repeating patterns. By
+                                                   changing your own patterns, you can shift the dynamic and create
+                                                   healthier conflict resolution.
                                                 </li>
                                              </ul>
                                           </li>
@@ -240,29 +241,30 @@ function TurningConflitsIntoConnectionContent() {
                                  <div class="bg-white text-gray-900 font-sans">
                                     <div class="max-w-2xl pl-3 ">
                                        <h1 class="text-2xl font-bold mb-5 -ml-6 font-serif">
-                                          Module o: Shall We Begin?
+                                          Module o: Let’s Get Started!
                                        </h1>
-                                       <h1 class="mb-4 -ml-6 font-bold">Commit to how you’ll complete this course. </h1>
+                                       <h1 class="mb-4 -ml-6 font-bold">Make a Commitment to Complete This Course</h1>
                                        <p class="mb-4 -ml-6 ">
-                                          This course is self-guided. Take time now to mark a commitment to yourself (or
-                                          with your partner) of how you’ll go about completing the course.
+                                          This is a self-paced course, so it’s important to set a clear plan for
+                                          yourself (or with your partner) on how you’ll move through the content.
                                        </p>
                                        <p class="mb-4 -ml-6 ">
-                                          We recommend watching all the videos in one module, and then completing the
-                                          corresponding exercises before moving on to the next module.
+                                          We suggest watching all the videos in one module, then completing the related
+                                          exercises before jumping into the next module.
                                        </p>
                                        <p class="mb-4 -ml-6 ">
-                                          Each of the four modules is approximately 20 minutes in length, and we
-                                          recommend spending about an hour on the corresponding exercises.
+                                          Each of the four modules is around 20 minutes long, and we recommend
+                                          dedicating about an hour for the exercises that follow.
                                        </p>
-                                       <p class="mb-4 -ml-6 ">How you choose to complete the course is up to you.</p>
+                                       <p class="mb-4 -ml-6 ">How you tackle the course is entirely up to you.</p>
                                        <p class="mb-4 -ml-6 ">
-                                          Will you do a weekend long marathon? Or will you do one module per week for a
-                                          month on Sunday nights?
+                                          Will you binge-watch and complete it over a weekend? Or perhaps you prefer
+                                          spreading it out and doing one module each week on Sunday evenings?
                                        </p>
                                        <p class="mb-4 -ml-6 ">
-                                          The choice is yours, but we highly recommend setting aside time in your
-                                          calendar now to mark your commitment.
+                                          Whatever you decide, we strongly recommend marking a specific time in your
+                                          calendar to stick to your commitment. It’ll make all the difference in your
+                                          success!
                                        </p>
                                     </div>
                                  </div>
@@ -355,7 +357,8 @@ function TurningConflitsIntoConnectionContent() {
                         <div className="mt-6 bg-white p-5 rounded-xl shadow-lg border border-gray-100 ml-4">
                            <h3 className="text-lg font-bold text-blue-900 mb-3">Need Help?</h3>
                            <p className="text-gray-700 text-sm">
-                              If you have any questions or need assistance, don't hesitate to contact our support team.
+                              If you have any questions or need help, feel free to reach out to our support team. We're
+                              here to assist you!
                            </p>
                            <button className="mt-3 hover:cursor-pointer w-full bg-blue-100 text-blue-900 py-2 rounded-lg font-medium hover:bg-blue-200 transition-colors duration-300">
                               Contact Support
@@ -369,8 +372,12 @@ function TurningConflitsIntoConnectionContent() {
                <div className="w-full max-w-6xl mt-8">
                   <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 flex justify-between items-center">
                      <div className="text-left hidden md:block">
-                        <p className="text-sm text-blue-200">Next up: Module 1 - Understanding Conflict</p>
-                        <p className="text-xs text-blue-300 mt-1">Continue your journey to better relationships</p>
+                        <p className="text-sm text-blue-200">
+                           Next up: Module 1 - Understanding the Dance of Conflict: How Conflict Shows Up
+                        </p>
+                        <p className="text-xs text-blue-300 mt-1">
+                           Continue progressing toward healthier and more meaningful relationships.
+                        </p>
                      </div>
                      <button
                         onClick={handleCompleteClick}

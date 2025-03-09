@@ -7,33 +7,33 @@ function MainPG() {
    const courses = [
       {
          id: 'course-id-1',
-         title: 'Bringing Desires Back',
+         title: 'Reigniting Desire',
          imageUrl: courseImage,
          buttonLink: 'https://www.estherperel.com/courses/bringing-desires-back',
-         p: 'Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck.',
-         li1: 'PERFECT FOR DATE NIGHT',
-         li2: 'GUIDED EXERCISES TO TURN INSIGHTS INTO ACTION',
-         li3: 'BASED ON 40+ YEARS OF EXPERIENCE',
+         p: 'Discover the barriers to desire and learn how to rediscover pleasure and break free from stagnation.',
+         li1: 'IDEAL FOR A ROMANTIC EVENING',
+         li2: 'EXERCISES TO TURN INSIGHTS INTO PRACTICAL ACTION',
+         li3: 'BASED ON OVER 40 YEARS OF EXPERTISE',
       },
       {
          id: 'course-id-2',
-         title: 'Turning Conflicts Into Connection',
+         title: 'Transforming Disagreements into Harmony',
          imageUrl: courseImage,
          buttonLink: 'https://www.estherperel.com/courses/turning-conflict-into-connection',
-         p: 'Uncover why you keep having the same fights over and over again. Learn how to break free from habitual patterns and responses.',
-         li1: 'Gain new insights in just one hour.',
-         li2: 'Downloadable workbook filled with guided exercises.',
-         li3: 'Improve conflicts with or without a partner.',
+         p: 'Understand the reasons behind recurring arguments and learn how to escape unproductive patterns and reactions.',
+         li1: 'Gain valuable insights in just an hour.',
+         li2: 'Workbook available for download with guided exercises.',
+         li3: 'Improve conflict resolution, with or without a partner.',
       },
       {
          id: 'course-id-3',
-         title: 'Playing with Desires',
+         title: 'Exploring and Reawakening Desire',
          imageUrl: courseImage,
          buttonLink: 'https://www.estherperel.com/courses/playing-with-desires',
-         p: 'Uncover what blocks desire. Learn how to tap back into pleasure and get unstuck. Discover a new sense of hope and possibility.',
-         li1: 'PERFECT FOR DATE NIGHT',
-         li2: 'Guided exercises to turn insights into action and understanding',
-         li3: 'Based on the same processes Esther has used to help real couples for 40+ years',
+         p: 'Discover the obstacles blocking desire and learn how to reconnect with pleasure and find a renewed sense of hope and possibility.',
+         li1: 'IDEAL FOR A ROMANTIC EVENING',
+         li2: 'Guided exercises to transform insights into actionable steps.',
+         li3: 'Built on the same techniques Esther has used to help real couples for over 40 years.',
       },
    ];
 
@@ -50,9 +50,10 @@ function MainPG() {
                         Learn from Syed Ali Haider
                      </h1>
                      <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                        Sayed Ali Haider has helped millions improve their lives and relationships. Now, she's offering
-                        a new way for you to gain access to her thoughtful and unique perspective. Her self-paced
-                        courses will spark new insights and help you improve your relational intelligence.
+                        Sayed Ali Haider has empowered countless individuals to enhance their lives and relationships.
+                        Now, she presents an exciting opportunity for you to explore her insightful and distinct
+                        perspective. Through his self-paced courses, you'll gain valuable insights and elevate your
+                        relational intelligence.
                      </p>
                   </div>
 
@@ -88,7 +89,7 @@ function MainPG() {
 
             {/* Testimonial Section */}
             <h1 className="text-3xl md:text-4xl font-bold text-center mx-auto mt-28 w-1/2 text-[#8a552d]">
-               Helping hundreds of thousands of people create empowered relationships
+               Supporting hundreds of thousands in building strong and empowered relationships.
             </h1>
 
             <div className="my-28">
