@@ -12,6 +12,8 @@ import ReviewModules from '../pages/ReviewModules';
 import TurningConflitsIntoConnection from '../pages/TurningConflitsIntoConnection';
 import TurningConflitsIntoConnectionContent from '../pages/TurningConflitsIntoConnectionContent';
 import CourseReview from '../pages/TurningConflitsIntoConnectionContent';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+import TermsOfService from '../pages/TermsOfService';
 
 function AppRoutes() {
    return (
@@ -34,6 +36,10 @@ function AppRoutes() {
                <Route path="/TurningConflitsIntoConnectionContent" element={<TurningConflitsIntoConnectionContent />} />
                <Route path="/dashboard" element={<PersonalDashboard />} />
             </Route>
+            
+            {/* Legal Pages */}
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
          </Route>
 
          {/* Redirect all unknown paths to home */}

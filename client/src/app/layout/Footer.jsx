@@ -58,7 +58,7 @@ function Footer() {
                   <h3 className="text-lg font-semibold mb-4">Contact</h3>
                   <div className="space-y-3 text-gray-300">
                      <p>Email: support@heart2heart.com</p>
-                     <p>Phone: +1 (555) 123-4567</p>
+                     <p>Phone: +92 328 1877082</p>
 
                      {/* Social Media Icons */}
                      <div className="flex space-x-4 mt-4">

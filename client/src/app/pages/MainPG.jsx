@@ -50,7 +50,7 @@ function MainPG() {
                         Learn from Syed Ali Haider
                      </h1>
                      <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                        Sayed Ali Haider has empowered countless individuals to enhance their lives and relationships.
+                        Syed Ali Haider has empowered countless individuals to enhance their lives and relationships.
                         Now, she presents an exciting opportunity for you to explore her insightful and distinct
                         perspective. Through his self-paced courses, you'll gain valuable insights and elevate your
                         relational intelligence.
